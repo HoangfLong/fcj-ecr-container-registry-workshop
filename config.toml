@@ -1,6 +1,6 @@
 # Change the default theme to be use when building the site with Hugo
 
-baseURL = "https://hoangflong.github.io/fcj-ecr-container-registry-workshop"
+baseURL = "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/"
 
 theme = "hugo-theme-learn"
 
