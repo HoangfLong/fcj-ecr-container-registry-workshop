@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>IAM Configuration on Create a new AWS account.</title>
-    <link>http://localhost:1313/fcj-ecr-container-registry-workshop//3-iam-configuration/</link>
+    <link>http://localhost:1313/fcj-ecr-container-registry-workshop/3-iam-configuration/</link>
     <description>Recent content in IAM Configuration on Create a new AWS account.</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/fcj-ecr-container-registry-workshop//3-iam-configuration/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/fcj-ecr-container-registry-workshop/3-iam-configuration/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
