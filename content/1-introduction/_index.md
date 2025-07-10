@@ -6,4 +6,5 @@ pre: "<b> 1. </b>"
 ---
 
 #### Architecture
-{{< figure src="/images/1/001.png">}}
+{{< figure src="images/1/001.png">}}
+

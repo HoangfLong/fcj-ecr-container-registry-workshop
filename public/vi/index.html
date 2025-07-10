@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/fcj-ecr-container-registry-workshop/images/favicon.png" type="image/png">
 
-    <title>Clean-up Resources :: Tạo mới tài khoản AWS</title>
+    <title>Quản lý Registry Container với ECR và Chính sách bảo mật :: Tạo mới tài khoản AWS</title>
 
     
-    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752138967" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752138967" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752138967" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752138967" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752138967" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752138967" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752138967" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752138967" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752138967" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752140036" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752140036" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752140036" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752140036" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752140036" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752140036" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752140036" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752140036" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752140036" rel="stylesheet">
     
-    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752138967" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752140036" rel="stylesheet">
     
     
 
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752138967"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752140036"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752138967"></script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752138967"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752140036"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752140036"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/fcj-ecr-container-registry-workshop\/\/vi";
     
 </script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752138967"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752140036"></script>
 
     
   </div>
@@ -657,17 +657,43 @@
 <a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
 </span>
 
-           
-	
-		<h1>Customize your own home page</h1>
-		<p>
-		  The site is working. Don't forget to customize this homepage with your own. You typically have 3 choices :
-		</p>
-		<ul>
-			<li><b>1. </b> Create an _index.md document in <b>content</b> folder and fill it with Markdown content</li>
-			<li><b>2. </b> Create an <b>index.html</b> file in the <b>static</b> folder and fill the file with HTML content</li>
-		  <li><b>3. </b> Configure your server to automatically redirect home page to one your documentation page</li>
-		</ul>
+ 
+<h1 id="quản-lý-registry-container-với-ecr-và-chính-sách-bảo-mật">Quản lý Registry Container với ECR và Chính sách bảo mật</h1>
+<h4 id="tổng-quan">Tổng quan</h4>
+<p>Trong workshop này, bạn sẽ triển khai một hệ thống <strong>quản lý registry container toàn diện</strong> sử dụng <strong>Amazon Elastic Container Registry (ECR)</strong>. Nội dung tập trung vào việc thiết kế một quy trình quản lý container an toàn, hiệu quả và chuyên nghiệp, được tích hợp hoàn chỉnh với:</p>
+<ul>
+<li><strong>Các chính sách bảo mật (IAM)</strong></li>
+<li><strong>Quét lỗ hổng bảo mật (Amazon Inspector)</strong></li>
+<li><strong>Kiểm soát truy cập chi tiết</strong></li>
+<li><strong>Tự động hóa vòng đời và triển khai CI/CD</strong></li>
+<li><strong>Giám sát và cảnh báo (CloudWatch &amp; SNS)</strong></li>
+<li><strong>Xác thực tuân thủ và tối ưu hóa chi phí</strong></li>
+</ul>
+<p>Bạn sẽ học cách thiết kế hệ thống theo phương pháp DevSecOps, trong đó các image container được quét trước khi triển khai, quyền truy cập được kiểm soát chặt chẽ và các tài nguyên cũ được tự động dọn dẹp để giảm chi phí.</p>
+<hr>
+<h2 id="khi-kết-thúc-workshop-này-bạn-sẽ-có-thể">Khi kết thúc workshop này, bạn sẽ có thể:</h2>
+<ul>
+<li>Áp dụng <strong>các chính sách bảo mật</strong> bằng IAM, trình bày cách ECR tương tác với các dịch vụ như CodeBuild, ECS và Lambda</li>
+<li>Tích hợp <strong>Amazon Inspector</strong> để tự động quét lỗ hổng bảo mật của các image container ngay sau khi đẩy image</li>
+<li>Triển khai <strong>kiểm soát truy cập chi tiết</strong>, đảm bảo người dùng và dịch vụ chỉ có các quyền cần thiết</li>
+<li>Cấu hình <strong>chính sách vòng đời ECR</strong> để tự động dọn dẹp các image không sử dụng hoặc không gắn thẻ và tối ưu hóa chi phí lưu trữ</li>
+<li>Thiết kế một <strong>pipeline CI/CD tự động</strong> kích hoạt quét bảo mật khi các image mới được đẩy lên</li>
+<li>Thiết lập <strong>giám sát và cảnh báo</strong> để thông báo cho bạn về các mối đe dọa bảo mật tiềm ẩn hoặc các hoạt động đáng ngờ</li>
+<li>Xây dựng một <strong>pipeline DevSecOps sẵn sàng cho sản xuất</strong> để quản lý container một cách an toàn và hiệu quả trên AWS</li>
+</ul>
+<hr>
+<h2 id="nội-dung-workshop">Nội dung Workshop</h2>
+<ol>
+<li><a href="/fcj-ecr-container-registry-workshop/vi/1-introduction/">Giới thiệu</a></li>
+<li><a href="/fcj-ecr-container-registry-workshop/vi/2-prerequisites/">Điều kiện tiên quyết</a></li>
+<li><a href="/fcj-ecr-container-registry-workshop/vi/3-iam-configuration/">Cấu hình IAM</a></li>
+<li><a href="/fcj-ecr-container-registry-workshop/vi/4-ci-cd-with-github-actions/">CI/CD với GitHub Actions</a></li>
+<li><a href="/fcj-ecr-container-registry-workshop/vi/5-ecr-security-lifecycle/">Bảo mật ECR &amp; Quản lý Vòng đời</a></li>
+<li><a href="/fcj-ecr-container-registry-workshop/vi/6-monitoring-alerts/">Giám sát &amp; Cảnh báo</a></li>
+<li><a href="/fcj-ecr-container-registry-workshop/vi/7-clean-up-resources/">Dọn dẹp tài nguyên</a></li>
+</ol>
+<hr>
+<p>Hãy bắt đầu xây dựng một registry container an toàn, tối ưu hóa và tự động trên AWS!</p>
 	
   
         
@@ -956,6 +982,8 @@
 	 
 	 
 		
+			<a class="nav nav-prev" href="/fcj-ecr-container-registry-workshop/vi/7-clean-up-resources/" title="Clean-up Resources"> <i class="fa fa-chevron-left"></i></a>
+		
 		
 			<a class="nav nav-next" href="/fcj-ecr-container-registry-workshop/vi/1-introduction/" title="Giới thiệu" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
@@ -967,19 +995,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752138967"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752138967"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752138967"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752138967"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752138967"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752138967"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752140036"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752140036"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752140036"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752140036"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752140036"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752140036"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752138967"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752138967"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752138967"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752140036"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752140036"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752140036"></script>
 
-    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752138967" rel="stylesheet" />
-    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752138967"></script>
+    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752140036" rel="stylesheet" />
+    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752140036"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
