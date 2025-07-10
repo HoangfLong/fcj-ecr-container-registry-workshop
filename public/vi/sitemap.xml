@@ -2,220 +2,220 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/vi/4-ci-cd-with-github-actions/4.1-prepare-github-repo/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/4-ci-cd-with-github-actions/4.1-prepare-github-repo/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-ci-cd-with-github-actions/4.1-prepare-github-repo/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//4-ci-cd-with-github-actions/4.1-prepare-github-repo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-ci-cd-with-github-actions/4.1-prepare-github-repo/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/4-ci-cd-with-github-actions/4.1-prepare-github-repo/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/6-monitoring-alerts/6.1-cloudtrail-cloudwatch/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/6-monitoring-alerts/6.1-cloudtrail-cloudwatch/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-monitoring-alerts/6.1-cloudtrail-cloudwatch/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//6-monitoring-alerts/6.1-cloudtrail-cloudwatch/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-monitoring-alerts/6.1-cloudtrail-cloudwatch/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/6-monitoring-alerts/6.1-cloudtrail-cloudwatch/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/1-introduction/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/1-introduction/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/1-introduction/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//1-introduction/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/1-introduction/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/1-introduction/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/5-ecr-security-lifecycle/5.1-repository-policy/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/5-ecr-security-lifecycle/5.1-repository-policy/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-ecr-security-lifecycle/5.1-repository-policy/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//5-ecr-security-lifecycle/5.1-repository-policy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-ecr-security-lifecycle/5.1-repository-policy/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/5-ecr-security-lifecycle/5.1-repository-policy/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-iam-configuration/3.1-set-up-iam/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/3-iam-configuration/3.1-set-up-iam/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-iam-configuration/3.1-set-up-iam/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//3-iam-configuration/3.1-set-up-iam/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-iam-configuration/3.1-set-up-iam/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/3-iam-configuration/3.1-set-up-iam/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/4-ci-cd-with-github-actions/4.2-build-github-actions/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/4-ci-cd-with-github-actions/4.2-build-github-actions/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-ci-cd-with-github-actions/4.2-build-github-actions/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//4-ci-cd-with-github-actions/4.2-build-github-actions/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-ci-cd-with-github-actions/4.2-build-github-actions/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/4-ci-cd-with-github-actions/4.2-build-github-actions/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/5-ecr-security-lifecycle/5.2-inspector-vulnerability-scan/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/5-ecr-security-lifecycle/5.2-inspector-vulnerability-scan/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-ecr-security-lifecycle/5.2-inspector-vulnerability-scan/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//5-ecr-security-lifecycle/5.2-inspector-vulnerability-scan/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-ecr-security-lifecycle/5.2-inspector-vulnerability-scan/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/5-ecr-security-lifecycle/5.2-inspector-vulnerability-scan/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-prerequisites/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/2-prerequisites/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-prerequisites/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//2-prerequisites/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-prerequisites/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/2-prerequisites/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-iam-configuration/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/3-iam-configuration/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-iam-configuration/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//3-iam-configuration/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-iam-configuration/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/3-iam-configuration/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/5-ecr-security-lifecycle/5.3-lifecycle-policy/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/5-ecr-security-lifecycle/5.3-lifecycle-policy/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-ecr-security-lifecycle/5.3-lifecycle-policy/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//5-ecr-security-lifecycle/5.3-lifecycle-policy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-ecr-security-lifecycle/5.3-lifecycle-policy/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/5-ecr-security-lifecycle/5.3-lifecycle-policy/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/4-ci-cd-with-github-actions/4.3-run-pipeline/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/4-ci-cd-with-github-actions/4.3-run-pipeline/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-ci-cd-with-github-actions/4.3-run-pipeline/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//4-ci-cd-with-github-actions/4.3-run-pipeline/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-ci-cd-with-github-actions/4.3-run-pipeline/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/4-ci-cd-with-github-actions/4.3-run-pipeline/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/4-ci-cd-with-github-actions/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/4-ci-cd-with-github-actions/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-ci-cd-with-github-actions/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//4-ci-cd-with-github-actions/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-ci-cd-with-github-actions/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/4-ci-cd-with-github-actions/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/5-ecr-security-lifecycle/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/5-ecr-security-lifecycle/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-ecr-security-lifecycle/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//5-ecr-security-lifecycle/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-ecr-security-lifecycle/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/5-ecr-security-lifecycle/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/6-monitoring-alerts/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/6-monitoring-alerts/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-monitoring-alerts/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//6-monitoring-alerts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-monitoring-alerts/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/6-monitoring-alerts/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/7-clean-up-resources/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/7-clean-up-resources/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/7-clean-up-resources/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//7-clean-up-resources/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/7-clean-up-resources/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/7-clean-up-resources/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/categories/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/categories/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/categories/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/categories/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/tags/</loc>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop//vi/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/tags/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/tags/"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop//vi/tags/"
                 />
   </url>
 </urlset>
