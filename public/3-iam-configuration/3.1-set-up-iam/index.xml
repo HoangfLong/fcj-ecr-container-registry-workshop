@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configure IAM Roles and Policies on Create a new AWS account.</title>
+    <link>//localhost:1313/3-iam-configuration/3.1-set-up-iam/</link>
+    <description>Recent content in Configure IAM Roles and Policies on Create a new AWS account.</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="//localhost:1313/3-iam-configuration/3.1-set-up-iam/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>
