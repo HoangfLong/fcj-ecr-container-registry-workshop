@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chạy và test thử Pipeline on Tạo mới tài khoản AWS</title>
-    <link>//localhost:1313/vi/4-ci-cd-with-github-actions/4.3-run-pipeline/</link>
+    <link>http://localhost:1313/fcj-ecr-container-registry-workshop/vi/4-ci-cd-with-github-actions/4.3-run-pipeline/</link>
     <description>Recent content in Chạy và test thử Pipeline on Tạo mới tài khoản AWS</description>
     <generator>Hugo</generator>
     <language>vi</language>
-    <atom:link href="//localhost:1313/vi/4-ci-cd-with-github-actions/4.3-run-pipeline/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/fcj-ecr-container-registry-workshop/vi/4-ci-cd-with-github-actions/4.3-run-pipeline/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

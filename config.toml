@@ -1,6 +1,8 @@
 # Change the default theme to be use when building the site with Hugo
 theme = "hugo-theme-learn"
 
+baseURL = "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/"
+
 # For search functionality
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
