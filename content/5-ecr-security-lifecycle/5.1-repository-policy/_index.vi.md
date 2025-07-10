@@ -54,19 +54,17 @@ Chúng ta sẽ cấu hình một Repository Policy cho repository `fcj-workshop-
 
 1.  **Truy cập dịch vụ ECR:**
     * Trong thanh tìm kiếm, gõ "ECR" và chọn **Elastic Container Registry**.
- {{< figure src="/images/5/5.1/001.png" alt="Chọn Repository trong ECR" >}}
+ {{< figure src="/fcj-ecr-container-registry-workshop/images/5/5.1/001-a.png" alt="Chọn Repository trong ECR" >}}
 
 2.  **Chọn Repository:**
     * Trong bảng điều khiển ECR, nhấp vào **Repositories** ở thanh điều hướng bên trái.
     * Tìm và nhấp vào repository có tên `fcj-workshop-app` của bạn.
 
-   
-
 3.  **Chỉnh sửa Repository Policy:**
     * Trong trang chi tiết của repository `fcj-workshop-app`, nhấp vào tab **Permissions**.
     * Nhấp vào nút **Edit repository policy**.
 
-    {{< figure src="/images/5/5.1/002.png" alt="Chỉnh sửa Repository Policy" >}}
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/5/5.1/002.png" alt="Chỉnh sửa Repository Policy" >}}
 
 4.  **Dán chính sách JSON đã điều chỉnh:**
     * Một trình soạn thảo JSON sẽ hiện ra. Xóa bất kỳ nội dung nào có sẵn và **dán chính sách JSON an toàn sau** vào đó:
@@ -100,11 +98,11 @@ Thay thế `<YOUR_AWS_ACCOUNT_ID>` bằng **AWS Account ID của bạn**. Bạn 
   {{% /notice %}}
 
 
-  {{< figure src="/images/5/5.1/003.png" alt="Dán Repository Policy JSON" >}}
+  {{< figure src="/fcj-ecr-container-registry-workshop/images/5/5.1/003.png" alt="Dán Repository Policy JSON" >}}
 
 5.  **Lưu chính sách và kết quả:**
  
-   {{< figure src="/images/5/5.1/004.png" alt="result" >}}
+   {{< figure src="/fcj-ecr-container-registry-workshop/images/5/5.1/004.png" alt="result" >}}
 
 ### Giải thích Repository Policy
 

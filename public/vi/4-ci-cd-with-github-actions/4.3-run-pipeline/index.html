@@ -12,21 +12,21 @@
     <title>Chạy và test thử Pipeline :: Tạo mới tài khoản AWS</title>
 
     
-    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752156812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752158393" rel="stylesheet">
     
-    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752156812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752158393" rel="stylesheet">
     
     
 
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752156812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752158393"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752156812"></script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752156812"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752158393"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752158393"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/fcj-ecr-container-registry-workshop\/\/vi";
     
 </script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752156812"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752158393"></script>
 
     
   </div>
@@ -730,20 +730,20 @@
 <p>Pipeline CI/CD của bạn được cấu hình để tự động chạy mỗi khi có code được đẩy lên nhánh <code>main</code>. Để kích hoạt pipeline, chúng ta sẽ thực hiện một thay đổi nhỏ và đẩy lên repository.</p>
 <ol>
 <li>
-<p><strong>Tạo một thay đổi nhỏ:</strong></p>
+<p>Tạo một thay đổi nhỏ:</p>
 <ul>
 <li>Mở thư mục dự án <code>aws-container-security-workshop</code> trên máy tính cục bộ của bạn.</li>
 <li>Mở file <code>fcj\src\static\js\app.js</code> (hoặc bất kỳ file nào khác, ví dụ: thêm một dòng comment vào file mã nguồn).</li>
 <li>Thêm một dòng chữ bất kỳ vào vào thư mục src\static\js\app.js dòng <strong>56</strong> là <code>v1.0.0</code></li>
 <li>Lưu lại file.
-<figure><img src="/images/4/4.3/0011.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.3/0011.png"
      alt="Truy cập folder">
  </figure>
 </li>
 </ul>
 </li>
 <li>
-<p><strong>Đẩy thay đổi lên GitHub:</strong></p>
+<p>Đẩy thay đổi lên GitHub:</p>
 <ul>
 <li>Mở Terminal/Command Prompt (đảm bảo bạn đang ở trong thư mục dự án).</li>
 <li>Thêm các thay đổi vào staging area:
@@ -764,42 +764,41 @@
 </ol>
 <h3 id="theo-dõi-quá-trình-chạy-pipeline">Theo dõi quá trình chạy Pipeline</h3>
 <p>Bây giờ, hãy truy cập GitHub và theo dõi quá trình chạy của pipeline.</p>
-<p><strong>Các bước thực hiện:</strong></p>
-<ol>
+<ol start="3">
 <li>
-<p><strong>Truy cập GitHub Actions:</strong></p>
+<p>Truy cập GitHub Actions:</p>
 <ul>
 <li>Mở trình duyệt và điều hướng đến repository của bạn trên GitHub.</li>
 <li>Nhấp vào tab <strong>Actions</strong>.</li>
 </ul>
-<figure><img src="/images/4/4.3/001.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.3/001.png"
         alt="Truy cập tab Actions trên GitHub">
     </figure>
 
 </li>
 <li>
-<p><strong>Xem trạng thái Workflow:</strong></p>
+<p>Xem trạng thái Workflow:</p>
 <ul>
 <li>Bạn sẽ thấy một workflow có tên <code>CI/CD Pipeline</code> với trạng thái <code>In progress</code> (đang chạy) hoặc <code>Queued</code> (đang chờ).</li>
 <li>Nhấp vào tên của workflow vừa chạy (dựa trên thông điệp commit bạn vừa tạo) để xem chi tiết.</li>
 </ul>
-<figure><img src="/images/4/4.3/002.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.3/002.png"
         alt="Danh sách các lần chạy workflow trên GitHub Actions">
     </figure>
 
 </li>
 <li>
-<p><strong>Kiểm tra các bước của Job:</strong></p>
+<p>Kiểm tra các bước của Job:</p>
 <ul>
 <li>Trong trang chi tiết workflow, bạn sẽ thấy job <code>build-and-push</code>. Nhấp vào đó để xem các bước cụ thể đang được thực hiện.</li>
 <li>Theo dõi log đầu ra của từng bước để đảm bảo chúng hoàn thành thành công. Bạn sẽ thấy các bước như <code>checkout</code>, <code>configure aws credentials</code>, <code>login to amazon ECR</code>, <code>Automatic Tagging of Releases</code>, và <code>build, tag, and push the image to ECR</code> lần lượt chạy.</li>
 <li>Đảm bảo rằng tất cả các bước đều có dấu tích xanh (thành công). Nếu có bất kỳ bước nào thất bại, hãy xem lại log để xác định nguyên nhân lỗi.</li>
 </ul>
-<p><figure><img src="/images/4/4.3/003.png"
+<p><figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.3/003.png"
         alt="Chi tiết các bước trong một job của GitHub Actions">
     </figure>
 
-<figure><img src="/images/4/4.3/003-b.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.3/003-b.png"
         alt="Chi tiết các bước trong một job của GitHub Actions">
     </figure>
 </p>
@@ -807,32 +806,32 @@
 </ol>
 <h3 id="xác-minh-kết-quả-pipeline">Xác minh kết quả Pipeline</h3>
 <p>Sau khi workflow hoàn thành thành công, chúng ta cần xác minh rằng các kết quả mong đợi đã được tạo ra.</p>
-<ol>
+<ol start="6">
 <li>
-<p><strong>Kiểm tra Git Tag mới trên GitHub:</strong></p>
+<p>Kiểm tra Git Tag mới trên GitHub:</p>
 <ul>
 <li>Quay lại trang chính của repository trên GitHub.</li>
 <li>Nhấp vào <strong>&ldquo;Tags&rdquo;</strong> hoặc <strong>&ldquo;Releases&rdquo;</strong> (thường nằm ở thanh bên phải hoặc dưới phần &ldquo;Code&rdquo;).</li>
 <li>Bạn sẽ thấy một Git tag mới đã được tạo với phiên bản tăng lên (ví dụ: <code>v0.0.1</code> nếu đây là lần chạy đầu tiên hoặc phiên bản tiếp theo sau <code>v0.0.0</code>). Tag này được tạo tự động bởi script <code>git_update.sh</code>.</li>
 </ul>
-<p><figure><img src="/images/4/4.3/004.png"
+<p><figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.3/004.png"
         alt="Kiểm tra Git Tags trên GitHub repository">
     </figure>
 
-<figure><img src="/images/4/4.3/004-b.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.3/004-b.png"
         alt="Kiểm tra Git Tags trên GitHub repository">
     </figure>
 </p>
 </li>
 <li>
-<p><strong>Kiểm tra Docker Image trên Amazon ECR:</strong></p>
+<p>Kiểm tra Docker Image trên Amazon ECR:</p>
 <ul>
 <li>Đăng nhập vào <strong>AWS Management Console</strong>.</li>
 <li>Điều hướng đến dịch vụ <strong>ECR</strong> (Elastic Container Registry).</li>
 <li>Trong bảng điều khiển ECR, tìm và nhấp vào repository của bạn có tên <code>fcj-workshop-app</code>.</li>
 <li>Bạn sẽ thấy một Docker image mới đã được push lên, với tag (phiên bản) tương ứng với Git tag bạn vừa thấy trên GitHub (ví dụ: <code>v0.0.1</code>).</li>
 </ul>
-<figure><img src="/images/4/4.3/005.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.3/005.png"
         alt="Kiểm tra Docker Image trên Amazon ECR">
     </figure>
 
@@ -1159,19 +1158,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752156812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752158393"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752156812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752158393"></script>
 
-    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752156812" rel="stylesheet" />
-    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752156812"></script>
+    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752158393" rel="stylesheet" />
+    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752158393"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

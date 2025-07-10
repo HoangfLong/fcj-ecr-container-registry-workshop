@@ -12,21 +12,21 @@
     <title>Chuẩn bị Github Repository :: Tạo mới tài khoản AWS</title>
 
     
-    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752156812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752158393" rel="stylesheet">
     
-    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752156812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752158393" rel="stylesheet">
     
     
 
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752156812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752158393"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752156812"></script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752156812"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752158393"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752158393"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/fcj-ecr-container-registry-workshop\/\/vi";
     
 </script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752156812"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752158393"></script>
 
     
   </div>
@@ -731,12 +731,12 @@
 <p>Bạn cần clone repository chứa mã nguồn ứng dụng mẫu về máy tính cục bộ để có thể chỉnh sửa và đẩy (push) code lên repository của riêng bạn.</p>
 <ol>
 <li>
-<p><strong>Mở Terminal / Command Prompt:</strong> Mở cửa sổ dòng lệnh trên máy tính của bạn.</p>
+<p>Mở Terminal / Command Prompt: Mở cửa sổ dòng lệnh trên máy tính của bạn.</p>
 </li>
 <li>
-<p><strong>Clone Repository gốc:</strong> Tải mã nguồn từ repository mẫu về máy tính của bạn.</p>
+<p>Clone Repository gốc: Tải mã nguồn từ repository mẫu về máy tính của bạn.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/HoangfLong/aws-container-security-workshop.git
-</span></span></code></pre></div><figure><img src="/images/4/4.1/001.png"
+</span></span></code></pre></div><figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.1/001.png"
         alt="Clone repository mẫu về máy cục bộ">
     </figure>
 
@@ -744,25 +744,24 @@
 </ol>
 <h3 id="tạo-repository-mới-trên-github-cá-nhân-và-đẩy-mã-nguồn-lên">Tạo Repository mới trên GitHub cá nhân và đẩy mã nguồn lên</h3>
 <p>Sau khi đã clone mã nguồn về máy, bạn cần tạo một repository mới trên tài khoản GitHub của mình và đẩy mã nguồn này lên đó. Đây sẽ là repository mà GitHub Actions của bạn sẽ theo dõi.</p>
-<p><strong>Các bước thực hiện:</strong></p>
-<ol>
+<ol start="3">
 <li>
-<p><strong>Tạo Repository mới trên GitHub:</strong></p>
+<p>Tạo Repository mới trên GitHub:</p>
 <ul>
 <li>Đăng nhập vào tài khoản GitHub của bạn.</li>
 <li>Nhấp vào dấu <strong>+</strong> ở góc trên bên phải, sau đó chọn <strong>New repository</strong>. Đặt tên cho repository của bạn (ví dụ: <code>aws-container-security-workshop-my-repo</code>), chọn loại <strong>Public</strong> hoặc <strong>Private</strong> tùy ý, và <strong>KHÔNG</strong> đánh dấu chọn &ldquo;Add a README file&rdquo; hay các tùy chọn khởi tạo khác. Cuối cùng, nhấp vào <strong>Create repository</strong>.</li>
 </ul>
-<p><figure><img src="/images/4/4.1/002.png"
+<p><figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.1/002.png"
         alt="Tạo repository mới trên GitHub">
     </figure>
 
-<figure><img src="/images/4/4.1/003.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.1/003.png"
         alt="Điền thông tin và tạo repository mới">
     </figure>
 </p>
 </li>
 <li>
-<p><strong>Liên kết và đẩy mã nguồn lên Repository mới:</strong></p>
+<p>Liên kết và đẩy mã nguồn lên Repository mới:</p>
 <ul>
 <li>Quay lại Terminal/Command Prompt (đảm bảo bạn đang ở trong thư mục dự án đã clone).</li>
 <li>Xóa liên kết remote cũ (nếu có):
@@ -778,7 +777,7 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push -u origin main
 </span></span></code></pre></div><em>(Bạn có thể được yêu cầu đăng nhập bằng tên người dùng và Mã thông báo truy cập cá nhân (Personal Access Token) của GitHub).</em></li>
 </ul>
-<figure><img src="/images/4/4.1/003-b.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.1/003-b.png"
         alt="Kết nối và đẩy mã nguồn lên repository mới">
     </figure>
 
@@ -786,24 +785,23 @@
 </ol>
 <h3 id="cấu-hình-github-repository-secrets">Cấu hình GitHub Repository Secrets</h3>
 <p>Để GitHub Actions có thể tương tác an toàn với tài khoản AWS và Amazon ECR của bạn, chúng ta cần lưu trữ các thông tin nhạy cảm (như Access Key, Secret Key của IAM User, Region AWS và URI của ECR) dưới dạng GitHub Repository Secrets. Điều này đảm bảo các thông tin này không bị lộ ra trong mã nguồn hoặc nhật ký workflow.</p>
-<p><strong>Các bước thực hiện:</strong></p>
-<ol>
+<ol start="5">
 <li>
-<p><strong>Truy cập Repository Settings:</strong> Từ trang repository đã đẩy code lên của bạn trên GitHub, nhấp vào tab <strong>Settings</strong>.</p>
-<figure><img src="/images/4/4.1/004.png"
+<p>Truy cập Repository Settings: Từ trang repository đã đẩy code lên của bạn trên GitHub, nhấp vào tab <strong>Settings</strong>.</p>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.1/004.png"
         alt="Tab Settings trên GitHub Repository">
     </figure>
 
 </li>
 <li>
-<p><strong>Chọn Secrets and Variables:</strong> Trong thanh điều hướng bên trái, cuộn xuống và chọn <strong>Secrets and variables</strong>, sau đó chọn <strong>Actions</strong>.</p>
-<figure><img src="/images/4/4.1/005.png"
+<p>Chọn Secrets and Variables: Trong thanh điều hướng bên trái, cuộn xuống và chọn <strong>Secrets and variables</strong>, sau đó chọn <strong>Actions</strong>.</p>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.1/005.png"
         alt="Chọn Secrets and variables -&gt; Actions">
     </figure>
 
 </li>
 <li>
-<p><strong>Thêm các Secrets cần thiết:</strong> Nhấp vào nút <strong>New repository secret</strong> để thêm từng secret một:</p>
+<p>Thêm các Secrets cần thiết: Nhấp vào nút <strong>New repository secret</strong> để thêm từng secret một:</p>
 <ul>
 <li>
 <p><code>AWS_ACCESS_KEY_ID</code>: Dán giá trị <strong>Access Key ID</strong> đã tạo trong AWS (từ Mục 3.1).</p>
@@ -818,7 +816,7 @@
 <p><code>ECR_REPOSITORY_URI</code>: Dán <strong>URI</strong> của ECR Repository <code>fcj-workshop-app</code> của bạn (từ Mục 3.1).</p>
 </li>
 </ul>
-<figure><img src="/images/4/4.1/006.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.1/006.png"
         alt="Thêm các GitHub Secrets">
     </figure>
 
@@ -1142,19 +1140,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752156812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752158393"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752156812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752158393"></script>
 
-    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752156812" rel="stylesheet" />
-    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752156812"></script>
+    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752158393" rel="stylesheet" />
+    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752158393"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -19,13 +19,13 @@ pre: "<b> 3.1. </b>"
 Chúng ta cần có một ECR Repository để lưu trữ các container image. Nếu bạn chưa tạo nó ở phần "Sự chuẩn bị", hãy thực hiện các bước sau. Sau đó, chúng ta sẽ lấy URI của repository này.
 
 
-1.  **Đăng nhập vào AWS Console:** Truy cập [https://aws.amazon.com/console/](https://aws.amazon.com/console/) và đăng nhập.
+1.  Đăng nhập vào AWS Console: Truy cập [https://aws.amazon.com/console/](https://aws.amazon.com/console/) và đăng nhập.
 
-2.  **Chuyển đến dịch vụ ECR:** Trong thanh tìm kiếm, gõ "ECR" và chọn **Elastic Container Registry**.
+2.  Chuyển đến dịch vụ ECR: Trong thanh tìm kiếm, gõ "ECR" và chọn **Elastic Container Registry**.
 
-    {{< figure src="/images/3/001.png" alt="Tìm kiếm và chọn dịch vụ ECR trong AWS Console">}}
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/3/001.png" alt="Tìm kiếm và chọn dịch vụ ECR trong AWS Console">}}
 
-3.  **Kiểm tra và Tạo Repository:**
+3.  Kiểm tra và Tạo Repository:
     * Trong bảng điều khiển ECR, chọn **Repositories** ở thanh điều hướng bên trái.
     * **Nếu bạn CHƯA CÓ** repository tên `fcj-workshop-app`, hãy làm theo các bước sau để tạo:
         * Nhấp vào nút **Create repository**.
@@ -33,17 +33,17 @@ Chúng ta cần có một ECR Repository để lưu trữ các container image. 
         * Trong phần **Repository name**, nhập `fcj-workshop-app`.
         * Nhấp vào nút **Create repository** ở cuối trang.
 
-    {{< figure src="/images/3/002.png" alt="Tạo ECR Repository mới">}}
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/3/002.png" alt="Tạo ECR Repository mới">}}
 
-    {{< figure src="/images/3/0002.png" alt="Tạo ECR Repository">}}
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/3/0002.png" alt="Tạo ECR Repository">}}
 
     * **Nếu bạn ĐÃ CÓ** repository `fcj-workshop-app` từ phần chuẩn bị, hãy chuyển sang bước tiếp theo.
 
-4.  **Chọn Repository của bạn và Sao chép URI:**
+4.  Chọn Repository của bạn và Sao chép URI:
     * Từ danh sách các repository, tìm và nhấp vào tên repository `fcj-workshop-app`.
     * Trên trang chi tiết của repository, bạn sẽ thấy **URI** của repository. Hãy sao chép URI này. Nó sẽ có dạng tương tự như: `123456789012.dkr.ecr.ap-southeast-1.amazonaws.com/fcj-workshop-app` (trong đó `123456789012` là ID tài khoản AWS của bạn và `ap-southeast-1` là Region).
 
-    {{< figure src="/images/3/003.png" alt="Chọn repository fcj-workshop-app và sao chép URI" >}}
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/3/003.png" alt="Chọn repository fcj-workshop-app và sao chép URI" >}}
 
     {{% notice note %}}
   Hãy giữ lại URI này. Chúng ta sẽ cần sử dụng nó trong các bước cấu hình GitHub Actions sau này để chỉ định repository mà image sẽ được đẩy tới.
@@ -53,21 +53,21 @@ Chúng ta cần có một ECR Repository để lưu trữ các container image. 
 
 Thay vì sử dụng chính sách có sẵn, chúng ta sẽ tạo một IAM Policy tùy chỉnh thông qua giao diện console để kiểm soát chi tiết hơn các quyền mà người dùng CI/CD sẽ có trên ECR.
 
-5.  **Chuyển đến dịch vụ IAM:** Trong thanh tìm kiếm của AWS Console, gõ "IAM" và chọn **IAM**.
+5. *Chuyển đến dịch vụ IAM: Trong thanh tìm kiếm của AWS Console, gõ "IAM" và chọn **IAM**.
 
-    {{< figure src="/images/3/004.png" alt="Tìm kiếm và chọn dịch vụ IAM trong AWS Console">}}
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/3/004.png" alt="Tìm kiếm và chọn dịch vụ IAM trong AWS Console">}}
 
-2.  **Tạo Policy mới:**
+2.  Tạo Policy mới:
     * Trong bảng điều khiển IAM, chọn **Policies** ở thanh điều hướng bên trái.
     * Nhấp vào nút **Create policy**.
 
-    {{< figure src="/images/3/005.png" alt="Bảng điều khiển IAM và nút Create policy">}}
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/3/005.png" alt="Bảng điều khiển IAM và nút Create policy">}}
 
-3.  **Chọn dịch vụ và hành động:**
+3.  Chọn dịch vụ và hành động:
     * Trên trang **Specify permissions**, chọn tab **Visual editor**.
     * Đối với **Service**, tìm và chọn **Elastic Container Registry**.
 
-    {{< figure src="/images/3/011.png" alt="Chọn dịch vụ ECR trong Visual Editor">}}
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/3/011.png" alt="Chọn dịch vụ ECR trong Visual Editor">}}
 
     * Trong phần **Actions allowed**, mở rộng **Write** và chọn các hành động sau:
         * `CompleteLayerUpload`
@@ -81,7 +81,7 @@ Thay vì sử dụng chính sách có sẵn, chúng ta sẽ tạo một IAM Poli
         * `GetDownloadUrlForLayer`
     * Trong phần **Access level** bổ sung, tìm và chọn hành động `GetAuthorizationToken`.
 
-    {{< figure src="/images/3/012.png" alt="Chọn các hành động ECR cần thiết">}}
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/3/012.png" alt="Chọn các hành động ECR cần thiết">}}
 
     * Trong phần **Resources**, chọn **Specific**.
     * Đối với **repository**, nhấp vào **Add ARN**.
@@ -92,7 +92,7 @@ Thay vì sử dụng chính sách có sẵn, chúng ta sẽ tạo một IAM Poli
     * Nhấp vào **Add ARN**.
     * Đối với tài nguyên `GetAuthorizationToken` (nếu có tùy chọn này riêng biệt), hãy để là **Any** hoặc thêm một dòng riêng cho hành động này với `Resource: *` nếu cần. (Thường thì `GetAuthorizationToken` không giới hạn theo resource repository cụ thể mà theo account/region).
 
-    {{< figure src="/images/3/013.png" alt="Cấu hình tài nguyên cụ thể cho ECR">}}
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/3/013.png" alt="Cấu hình tài nguyên cụ thể cho ECR">}}
 
     {{% notice note %}}
   Các quyền `ecr:*` được chọn cho phép user thực hiện các thao tác đẩy (push) và kéo (pull) image.
@@ -100,14 +100,14 @@ Thay vì sử dụng chính sách có sẵn, chúng ta sẽ tạo một IAM Poli
   `Resource`: Chúng ta chỉ định chính sách này chỉ áp dụng cho repository `fcj-workshop-app` của bạn, tuân thủ nguyên tắc ít đặc quyền nhất.
     {{% /notice %}}
 
-1.  **Thêm Tags (Tùy chọn):** Bạn có thể thêm các thẻ để dễ quản lý. Nhấp vào **Next: Review policy**.
+1.  Thêm Tags (Tùy chọn): Bạn có thể thêm các thẻ để dễ quản lý. Nhấp vào **Next: Review policy**.
 
-2.  **Xem lại và Tạo Policy:**
+2.  Xem lại và Tạo Policy:
     * Đối với **Policy name**, nhập `fcj-ecr-ci-cd-policy`.
     * (Tùy chọn) Nhập **Description**. nhập `policy for CI-CD`.
     * Nhấp vào nút **Create policy**.
 
-    {{< figure src="/images/3/015.png" alt="Đặt tên và xem lại IAM Policy">}}
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/3/015.png" alt="Đặt tên và xem lại IAM Policy">}}
 
     {{% notice tip %}}
 Việc tạo một chính sách tùy chỉnh như thế này cho phép bạn kiểm soát chính xác hơn các quyền mà người dùng hoặc vai trò có. Đây là một thực hành tốt hơn so với việc gán các chính sách quản lý (managed policies) có phạm vi rộng hơn cho mục đích CI/CD.
@@ -117,45 +117,45 @@ Việc tạo một chính sách tùy chỉnh như thế này cho phép bạn ki�
 
 Bây giờ chúng ta sẽ tạo một IAM User và gán chính sách tùy chỉnh `fcj-ecr-ci-cd-policy` vừa tạo cho user này.
 
-1.  **Chuyển đến dịch vụ IAM:** Đảm bảo bạn đang ở bảng điều khiển IAM.
+10.  Chuyển đến dịch vụ IAM: Đảm bảo bạn đang ở bảng điều khiển IAM.
 
-2.  **Tạo User mới:**
+11.  Tạo User mới:
     * Trong bảng điều khiển IAM, chọn **Users** ở thanh điều hướng bên trái.
     * Nhấp vào nút **Create user**.
 
-    {{< figure src="/images/3/016.png" alt="Bảng điều khiển IAM và nút Create user" caption="Hình 3.11: Bảng điều khiển IAM và nút Create user">}}
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/3/016.png" alt="Bảng điều khiển IAM và nút Create user">}}
 
     * Đối với **User name**, nhập `fcj-ecr-ci-cd-user`.
     * Chọn **Provide user access to the AWS Management Console** cho user CI/CD.
     * Nhấp vào **Next**.
 
-    {{< figure src="/images/3/017.png" alt="Thiết lập tên người dùng và tùy chọn truy cập" >}}
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/3/017.png" alt="Thiết lập tên người dùng và tùy chọn truy cập" >}}
 
-3.  **Gán quyền (Permissions):**
+12.  Gán quyền (Permissions):
     * Trên trang **Set permissions**, chọn **Attach policies directly**.
     * Trong ô tìm kiếm, gõ `fcj-ecr-ci-cd-policy` (tên chính sách bạn vừa tạo) và chọn chính sách này.
     * Nhấp vào **Next**.
 
-    {{< figure src="/images/3/018.png" alt="Gán chính sách tùy chỉnh fcj-ecr-ci-cd-policy">}}
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/3/018.png" alt="Gán chính sách tùy chỉnh fcj-ecr-ci-cd-policy">}}
 
-4.  **Xem lại và Tạo User:**
+13.  Xem lại và Tạo User:
     * Trên trang **Review and create**, xem lại các thiết lập.
     * Nhấp vào nút **Create user**.
 
-    {{< figure src="/images/3/019.png" alt="Xem lại thông tin và tạo người dùng">}}
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/3/019.png" alt="Xem lại thông tin và tạo người dùng">}}
 
-5.  **Lưu Access Key:**
+14.  ưu Access Key:
     * Sau khi user được tạo, bạn sẽ thấy thông báo thành công. Nhấp vào **View user** hoặc quay lại danh sách user và nhấp vào user `fcj-ecr-ci-cd-user` vừa tạo.
     * Chuyển đến tab **Security credentials**.
     * Trong phần **Access keys**, nhấp vào **Create access key**.
-    {{< figure src="/images/3/020.png" alt="Tạo Access Key cho IAM User">}}
-6.  Chọn **Third-party service** làm trường hợp sử dụng.
-    {{< figure src="/images/3/021.png" alt="Lưu Access Key ID và Secret Access Key" >}}
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/3/020.png" alt="Tạo Access Key cho IAM User">}}
+15.  Chọn **Third-party service** làm trường hợp sử dụng.
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/3/021.png" alt="Lưu Access Key ID và Secret Access Key" >}}
     * Đánh dấu vào ô xác nhận và nhấp **Next**.
-7. (Tùy chọn) Nhập mô tả cho Access Key (ví dụ: `for-github-actions`).
+16. (Tùy chọn) Nhập mô tả cho Access Key (ví dụ: `for-github-actions`).
     * Nhấp vào **Done**.
 
-    {{< figure src="/images/3/022.png" alt="Access Key ID và Secret Access Key" >}}
+    {{< figure src="/fcj-ecr-container-registry-workshop/images/3/022.png" alt="Access Key ID và Secret Access Key" >}}
 
     {{% notice warning %}}
  **Secret Access Key chỉ hiển thị MỘT LẦN duy nhất ngay sau khi tạo.** Hãy chắc chắn rằng bạn đã sao chép cả **Access Key ID** và **Secret Access Key** và lưu trữ chúng ở một nơi an toàn. Bạn sẽ không thể xem lại Secret Access Key này sau khi đóng cửa sổ này. Chúng ta sẽ cần sử dụng chúng để cấu hình GitHub Actions trong các phần sau.

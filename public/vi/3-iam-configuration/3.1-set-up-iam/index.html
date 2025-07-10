@@ -12,21 +12,21 @@
     <title>Thiết lập IAM và Policies :: Tạo mới tài khoản AWS</title>
 
     
-    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752156812" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752156812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752158393" rel="stylesheet">
     
-    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752156812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752158393" rel="stylesheet">
     
     
 
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752156812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752158393"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752156812"></script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752156812"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752158393"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752158393"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/fcj-ecr-container-registry-workshop\/\/vi";
     
 </script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752156812"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752158393"></script>
 
     
   </div>
@@ -731,17 +731,17 @@
 <p>Chúng ta cần có một ECR Repository để lưu trữ các container image. Nếu bạn chưa tạo nó ở phần &ldquo;Sự chuẩn bị&rdquo;, hãy thực hiện các bước sau. Sau đó, chúng ta sẽ lấy URI của repository này.</p>
 <ol>
 <li>
-<p><strong>Đăng nhập vào AWS Console:</strong> Truy cập <a href="https://aws.amazon.com/console/">https://aws.amazon.com/console/</a> và đăng nhập.</p>
+<p>Đăng nhập vào AWS Console: Truy cập <a href="https://aws.amazon.com/console/">https://aws.amazon.com/console/</a> và đăng nhập.</p>
 </li>
 <li>
-<p><strong>Chuyển đến dịch vụ ECR:</strong> Trong thanh tìm kiếm, gõ &ldquo;ECR&rdquo; và chọn <strong>Elastic Container Registry</strong>.</p>
-<figure><img src="/images/3/001.png"
+<p>Chuyển đến dịch vụ ECR: Trong thanh tìm kiếm, gõ &ldquo;ECR&rdquo; và chọn <strong>Elastic Container Registry</strong>.</p>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/3/001.png"
         alt="Tìm kiếm và chọn dịch vụ ECR trong AWS Console">
     </figure>
 
 </li>
 <li>
-<p><strong>Kiểm tra và Tạo Repository:</strong></p>
+<p>Kiểm tra và Tạo Repository:</p>
 <ul>
 <li>Trong bảng điều khiển ECR, chọn <strong>Repositories</strong> ở thanh điều hướng bên trái.</li>
 <li><strong>Nếu bạn CHƯA CÓ</strong> repository tên <code>fcj-workshop-app</code>, hãy làm theo các bước sau để tạo:
@@ -753,11 +753,11 @@
 </ul>
 </li>
 </ul>
-<figure><img src="/images/3/002.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/3/002.png"
         alt="Tạo ECR Repository mới">
     </figure>
 
-<figure><img src="/images/3/0002.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/3/0002.png"
         alt="Tạo ECR Repository">
     </figure>
 
@@ -766,12 +766,12 @@
 </ul>
 </li>
 <li>
-<p><strong>Chọn Repository của bạn và Sao chép URI:</strong></p>
+<p>Chọn Repository của bạn và Sao chép URI:</p>
 <ul>
 <li>Từ danh sách các repository, tìm và nhấp vào tên repository <code>fcj-workshop-app</code>.</li>
 <li>Trên trang chi tiết của repository, bạn sẽ thấy <strong>URI</strong> của repository. Hãy sao chép URI này. Nó sẽ có dạng tương tự như: <code>123456789012.dkr.ecr.ap-southeast-1.amazonaws.com/fcj-workshop-app</code> (trong đó <code>123456789012</code> là ID tài khoản AWS của bạn và <code>ap-southeast-1</code> là Region).</li>
 </ul>
-<figure><img src="/images/3/003.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/3/003.png"
         alt="Chọn repository fcj-workshop-app và sao chép URI">
     </figure>
 
@@ -785,30 +785,30 @@
 <p>Thay vì sử dụng chính sách có sẵn, chúng ta sẽ tạo một IAM Policy tùy chỉnh thông qua giao diện console để kiểm soát chi tiết hơn các quyền mà người dùng CI/CD sẽ có trên ECR.</p>
 <ol start="5">
 <li>
-<p><strong>Chuyển đến dịch vụ IAM:</strong> Trong thanh tìm kiếm của AWS Console, gõ &ldquo;IAM&rdquo; và chọn <strong>IAM</strong>.</p>
-<figure><img src="/images/3/004.png"
+<p>*Chuyển đến dịch vụ IAM: Trong thanh tìm kiếm của AWS Console, gõ &ldquo;IAM&rdquo; và chọn <strong>IAM</strong>.</p>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/3/004.png"
         alt="Tìm kiếm và chọn dịch vụ IAM trong AWS Console">
     </figure>
 
 </li>
 <li>
-<p><strong>Tạo Policy mới:</strong></p>
+<p>Tạo Policy mới:</p>
 <ul>
 <li>Trong bảng điều khiển IAM, chọn <strong>Policies</strong> ở thanh điều hướng bên trái.</li>
 <li>Nhấp vào nút <strong>Create policy</strong>.</li>
 </ul>
-<figure><img src="/images/3/005.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/3/005.png"
         alt="Bảng điều khiển IAM và nút Create policy">
     </figure>
 
 </li>
 <li>
-<p><strong>Chọn dịch vụ và hành động:</strong></p>
+<p>Chọn dịch vụ và hành động:</p>
 <ul>
 <li>Trên trang <strong>Specify permissions</strong>, chọn tab <strong>Visual editor</strong>.</li>
 <li>Đối với <strong>Service</strong>, tìm và chọn <strong>Elastic Container Registry</strong>.</li>
 </ul>
-<figure><img src="/images/3/011.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/3/011.png"
         alt="Chọn dịch vụ ECR trong Visual Editor">
     </figure>
 
@@ -831,7 +831,7 @@
 </li>
 <li>Trong phần <strong>Access level</strong> bổ sung, tìm và chọn hành động <code>GetAuthorizationToken</code>.</li>
 </ul>
-<figure><img src="/images/3/012.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/3/012.png"
         alt="Chọn các hành động ECR cần thiết">
     </figure>
 
@@ -848,7 +848,7 @@
 <li>Nhấp vào <strong>Add ARN</strong>.</li>
 <li>Đối với tài nguyên <code>GetAuthorizationToken</code> (nếu có tùy chọn này riêng biệt), hãy để là <strong>Any</strong> hoặc thêm một dòng riêng cho hành động này với <code>Resource: *</code> nếu cần. (Thường thì <code>GetAuthorizationToken</code> không giới hạn theo resource repository cụ thể mà theo account/region).</li>
 </ul>
-<figure><img src="/images/3/013.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/3/013.png"
         alt="Cấu hình tài nguyên cụ thể cho ECR">
     </figure>
 
@@ -860,16 +860,16 @@
 
 </li>
 <li>
-<p><strong>Thêm Tags (Tùy chọn):</strong> Bạn có thể thêm các thẻ để dễ quản lý. Nhấp vào <strong>Next: Review policy</strong>.</p>
+<p>Thêm Tags (Tùy chọn): Bạn có thể thêm các thẻ để dễ quản lý. Nhấp vào <strong>Next: Review policy</strong>.</p>
 </li>
 <li>
-<p><strong>Xem lại và Tạo Policy:</strong></p>
+<p>Xem lại và Tạo Policy:</p>
 <ul>
 <li>Đối với <strong>Policy name</strong>, nhập <code>fcj-ecr-ci-cd-policy</code>.</li>
 <li>(Tùy chọn) Nhập <strong>Description</strong>. nhập <code>policy for CI-CD</code>.</li>
 <li>Nhấp vào nút <strong>Create policy</strong>.</li>
 </ul>
-<figure><img src="/images/3/015.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/3/015.png"
         alt="Đặt tên và xem lại IAM Policy">
     </figure>
 
@@ -881,83 +881,76 @@
 </ol>
 <h3 id="tạo-iam-user-và-gán-policy-cho-cicd">Tạo IAM User và Gán Policy cho CI/CD</h3>
 <p>Bây giờ chúng ta sẽ tạo một IAM User và gán chính sách tùy chỉnh <code>fcj-ecr-ci-cd-policy</code> vừa tạo cho user này.</p>
-<ol>
+<ol start="10">
 <li>
-<p><strong>Chuyển đến dịch vụ IAM:</strong> Đảm bảo bạn đang ở bảng điều khiển IAM.</p>
+<p>Chuyển đến dịch vụ IAM: Đảm bảo bạn đang ở bảng điều khiển IAM.</p>
 </li>
 <li>
-<p><strong>Tạo User mới:</strong></p>
-<ul>
-<li>Trong bảng điều khiển IAM, chọn <strong>Users</strong> ở thanh điều hướng bên trái.</li>
-<li>Nhấp vào nút <strong>Create user</strong>.</li>
-</ul>
-<figure><img src="/images/3/016.png"
-        alt="Bảng điều khiển IAM và nút Create user"><figcaption>
-          <p>Hình 3.11: Bảng điều khiển IAM và nút Create user</p>
-        </figcaption>
+<p>Tạo User mới:
+* Trong bảng điều khiển IAM, chọn <strong>Users</strong> ở thanh điều hướng bên trái.
+* Nhấp vào nút <strong>Create user</strong>.</p>
+</li>
+</ol>
+<pre><code><figure><img src="/fcj-ecr-container-registry-workshop/images/3/016.png"
+        alt="Bảng điều khiển IAM và nút Create user">
     </figure>
 
-<ul>
-<li>Đối với <strong>User name</strong>, nhập <code>fcj-ecr-ci-cd-user</code>.</li>
-<li>Chọn <strong>Provide user access to the AWS Management Console</strong> cho user CI/CD.</li>
-<li>Nhấp vào <strong>Next</strong>.</li>
-</ul>
-<figure><img src="/images/3/017.png"
+
+* Đối với **User name**, nhập `fcj-ecr-ci-cd-user`.
+* Chọn **Provide user access to the AWS Management Console** cho user CI/CD.
+* Nhấp vào **Next**.
+
+<figure><img src="/fcj-ecr-container-registry-workshop/images/3/017.png"
         alt="Thiết lập tên người dùng và tùy chọn truy cập">
     </figure>
 
-</li>
-<li>
-<p><strong>Gán quyền (Permissions):</strong></p>
-<ul>
-<li>Trên trang <strong>Set permissions</strong>, chọn <strong>Attach policies directly</strong>.</li>
-<li>Trong ô tìm kiếm, gõ <code>fcj-ecr-ci-cd-policy</code> (tên chính sách bạn vừa tạo) và chọn chính sách này.</li>
-<li>Nhấp vào <strong>Next</strong>.</li>
-</ul>
-<figure><img src="/images/3/018.png"
+</code></pre>
+<ol start="12">
+<li>Gán quyền (Permissions):
+* Trên trang <strong>Set permissions</strong>, chọn <strong>Attach policies directly</strong>.
+* Trong ô tìm kiếm, gõ <code>fcj-ecr-ci-cd-policy</code> (tên chính sách bạn vừa tạo) và chọn chính sách này.
+* Nhấp vào <strong>Next</strong>.</li>
+</ol>
+<pre><code><figure><img src="/fcj-ecr-container-registry-workshop/images/3/018.png"
         alt="Gán chính sách tùy chỉnh fcj-ecr-ci-cd-policy">
     </figure>
 
-</li>
-<li>
-<p><strong>Xem lại và Tạo User:</strong></p>
-<ul>
-<li>Trên trang <strong>Review and create</strong>, xem lại các thiết lập.</li>
-<li>Nhấp vào nút <strong>Create user</strong>.</li>
-</ul>
-<figure><img src="/images/3/019.png"
+</code></pre>
+<ol start="13">
+<li>Xem lại và Tạo User:
+* Trên trang <strong>Review and create</strong>, xem lại các thiết lập.
+* Nhấp vào nút <strong>Create user</strong>.</li>
+</ol>
+<pre><code><figure><img src="/fcj-ecr-container-registry-workshop/images/3/019.png"
         alt="Xem lại thông tin và tạo người dùng">
     </figure>
 
-</li>
+</code></pre>
+<ol start="14">
 <li>
-<p><strong>Lưu Access Key:</strong></p>
-<ul>
-<li>Sau khi user được tạo, bạn sẽ thấy thông báo thành công. Nhấp vào <strong>View user</strong> hoặc quay lại danh sách user và nhấp vào user <code>fcj-ecr-ci-cd-user</code> vừa tạo.</li>
-<li>Chuyển đến tab <strong>Security credentials</strong>.</li>
-<li>Trong phần <strong>Access keys</strong>, nhấp vào <strong>Create access key</strong>.
-<figure><img src="/images/3/020.png"
+<p>ưu Access Key:
+* Sau khi user được tạo, bạn sẽ thấy thông báo thành công. Nhấp vào <strong>View user</strong> hoặc quay lại danh sách user và nhấp vào user <code>fcj-ecr-ci-cd-user</code> vừa tạo.
+* Chuyển đến tab <strong>Security credentials</strong>.
+* Trong phần <strong>Access keys</strong>, nhấp vào <strong>Create access key</strong>.
+<figure><img src="/fcj-ecr-container-registry-workshop/images/3/020.png"
         alt="Tạo Access Key cho IAM User">
     </figure>
-</li>
-</ul>
+</p>
 </li>
 <li>
 <p>Chọn <strong>Third-party service</strong> làm trường hợp sử dụng.
-<figure><img src="/images/3/021.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/3/021.png"
         alt="Lưu Access Key ID và Secret Access Key">
     </figure>
-</p>
-<ul>
-<li>Đánh dấu vào ô xác nhận và nhấp <strong>Next</strong>.</li>
-</ul>
+
+* Đánh dấu vào ô xác nhận và nhấp <strong>Next</strong>.</p>
 </li>
 <li>
 <p>(Tùy chọn) Nhập mô tả cho Access Key (ví dụ: <code>for-github-actions</code>).</p>
 <ul>
 <li>Nhấp vào <strong>Done</strong>.</li>
 </ul>
-<figure><img src="/images/3/022.png"
+<figure><img src="/fcj-ecr-container-registry-workshop/images/3/022.png"
         alt="Access Key ID và Secret Access Key">
     </figure>
 
@@ -1285,19 +1278,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752156812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752158393"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752156812"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752156812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752158393"></script>
 
-    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752156812" rel="stylesheet" />
-    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752156812"></script>
+    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752158393" rel="stylesheet" />
+    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752158393"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
