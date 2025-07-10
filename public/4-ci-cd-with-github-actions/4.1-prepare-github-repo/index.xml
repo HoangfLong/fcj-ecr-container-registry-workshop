@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Prepare GitHub Repository on Create a new AWS account.</title>
-    <link>https://hoangflong.github.io/fcj-ecr-container-registry-workshop/4-ci-cd-with-github-actions/4.1-prepare-github-repo/</link>
+    <link>//localhost:1313/4-ci-cd-with-github-actions/4.1-prepare-github-repo/</link>
     <description>Recent content in Prepare GitHub Repository on Create a new AWS account.</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="https://hoangflong.github.io/fcj-ecr-container-registry-workshop/4-ci-cd-with-github-actions/4.1-prepare-github-repo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/4-ci-cd-with-github-actions/4.1-prepare-github-repo/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

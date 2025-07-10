@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Quản lý Registry Container với ECR và Chính sách bảo mật on Tạo mới tài khoản AWS</title>
-    <link>https://hoangflong.github.io/fcj-ecr-container-registry-workshop/vi/</link>
+    <link>//localhost:1313/vi/</link>
     <description>Recent content in Quản lý Registry Container với ECR và Chính sách bảo mật on Tạo mới tài khoản AWS</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="https://hoangflong.github.io/fcj-ecr-container-registry-workshop/vi/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/vi/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
