@@ -111,18 +111,6 @@
                 href="http://localhost:1313/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.2-inspector-vulnerability-scan/"
                 />
   </url><url>
-    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop/4-ci-cd-with-github-actions/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="vi"
-                href="http://localhost:1313/fcj-ecr-container-registry-workshop/vi/4-ci-cd-with-github-actions/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://localhost:1313/fcj-ecr-container-registry-workshop/4-ci-cd-with-github-actions/"
-                />
-  </url><url>
     <loc>http://localhost:1313/fcj-ecr-container-registry-workshop/3-iam-configuration/</loc>
     <xhtml:link
                 rel="alternate"
@@ -145,6 +133,18 @@
                 rel="alternate"
                 hreflang="en"
                 href="http://localhost:1313/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/fcj-ecr-container-registry-workshop/4-ci-cd-with-github-actions/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop/vi/4-ci-cd-with-github-actions/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="http://localhost:1313/fcj-ecr-container-registry-workshop/4-ci-cd-with-github-actions/"
                 />
   </url><url>
     <loc>http://localhost:1313/fcj-ecr-container-registry-workshop/4-ci-cd-with-github-actions/4.3-run-pipeline/</loc>

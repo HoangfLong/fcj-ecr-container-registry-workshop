@@ -1,6 +1,6 @@
 ---
 title: "CI/CD with GitHub Actions"
-weight: 3
+weight: 4
 chapter: false
-pre: "<b> 4.3. </b>"
+pre: "<b> 4. </b>"
 ---
