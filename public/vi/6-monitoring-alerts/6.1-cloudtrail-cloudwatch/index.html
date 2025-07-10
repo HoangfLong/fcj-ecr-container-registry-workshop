@@ -12,21 +12,21 @@
     <title>Giám sát ECR với AWS CloudTrail và Amazon CloudWatch :: Tạo mới tài khoản AWS</title>
 
     
-    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752158393" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752158393" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752158393" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752158393" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752158393" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752158393" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752158393" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752158393" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752158812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752158812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752158812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752158812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752158812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752158812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752158812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752158812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752158812" rel="stylesheet">
     
-    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752158812" rel="stylesheet">
     
     
 
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752158812"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752158393"></script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752158393"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752158812"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752158812"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/fcj-ecr-container-registry-workshop\/\/vi";
     
 </script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752158393"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752158812"></script>
 
     
   </div>
@@ -735,7 +735,7 @@
 <h3 id="thiết-lập-cloudtrail-để-giám-sát-ecr">Thiết lập CloudTrail để giám sát ECR</h3>
 <ol>
 <li>
-<p><strong>Đăng nhập và truy cập CloudTrail:</strong></p>
+<p>Đăng nhập và truy cập CloudTrail:</p>
 <ul>
 <li>Đăng nhập vào <a href="https://aws.amazon.com/console/">AWS Management Console</a>.</li>
 <li>Trong thanh tìm kiếm, gõ <code>CloudTrail</code> và chọn dịch vụ <strong>CloudTrail</strong> từ kết quả.</li>
@@ -746,7 +746,7 @@
 
 </li>
 <li>
-<p><strong>Kiểm tra trạng thái Trail và quyết định hành động:</strong></p>
+<p>Kiểm tra trạng thái Trail và quyết định hành động:</p>
 <ul>
 <li>Trong bảng điều khiển CloudTrail, chọn <strong>&ldquo;Trails&rdquo;</strong> từ menu bên trái.</li>
 <li>Kiểm tra xem bạn đã có Trail nào đang hoạt động và gửi nhật ký đến CloudWatch Logs chưa.
@@ -762,7 +762,7 @@
 
 </li>
 <li>
-<p><strong>Tạo hoặc chỉnh sửa Trail để gửi nhật ký đến CloudWatch Logs:</strong></p>
+<p>Tạo hoặc chỉnh sửa Trail để gửi nhật ký đến CloudWatch Logs:</p>
 <ul>
 <li><strong>Nếu tạo Trail mới:</strong> Nhấp vào <strong>&ldquo;Create trail&rdquo;</strong>.</li>
 <li><strong>Nếu chỉnh sửa Trail hiện có:</strong> Nhấp vào tên Trail đó, sau đó tìm phần <strong>&ldquo;CloudWatch Logs&rdquo;</strong> và nhấp <strong>&ldquo;Edit&rdquo;</strong>.</li>
@@ -773,7 +773,7 @@
 
 </li>
 <li>
-<p><strong>Cấu hình chi tiết Trail (nếu tạo mới):</strong></p>
+<p>Cấu hình chi tiết Trail (nếu tạo mới):</p>
 <ul>
 <li><strong>Trail name:</strong> Đặt tên cho Trail (ví dụ: <code>ecr-monitor-trail</code>).</li>
 <li><strong>Storage location:</strong> Chọn <strong>&ldquo;Create new S3 bucket&rdquo;</strong> và đặt tên (hoặc dùng bucket hiện có).</li>
@@ -786,7 +786,7 @@
 
 </li>
 <li>
-<p><strong>Cấu hình chi tiết Trail (tiếp theo):</strong></p>
+<p>Cấu hình chi tiết Trail (tiếp theo):</p>
 <ul>
 <li>Nhấp <strong>&ldquo;Next&rdquo;</strong>.</li>
 <li>Trong phần <strong>&ldquo;Choose log events&rdquo;</strong>, đảm bảo <strong>&ldquo;Management events&rdquo;</strong> được chọn.</li>
@@ -797,7 +797,7 @@
 
 </li>
 <li>
-<p><strong>Hoàn tất tạo Trail:</strong></p>
+<p>Hoàn tất tạo Trail:</p>
 <ul>
 <li>Nhấp <strong>&ldquo;Next&rdquo;</strong>.</li>
 <li>Nhấp <strong>&ldquo;Create trail&rdquo;</strong> (nếu tạo mới) hoặc <strong>&ldquo;Save changes&rdquo;</strong> (nếu chỉnh sửa).</li>
@@ -811,7 +811,7 @@
 <h3 id="xem-và-phân-tích-nhật-ký-ecr">Xem và phân tích nhật ký ECR</h3>
 <ol start="7">
 <li>
-<p><strong>Truy cập Lịch sử Sự kiện CloudTrail:</strong></p>
+<p>Truy cập Lịch sử Sự kiện CloudTrail:</p>
 <ul>
 <li>Trong bảng điều khiển CloudTrail, chọn <strong>&ldquo;Event history&rdquo;</strong> từ menu bên trái.</li>
 </ul>
@@ -821,7 +821,7 @@
 
 </li>
 <li>
-<p><strong>Lọc sự kiện theo ECR:</strong></p>
+<p>Lọc sự kiện theo ECR:</p>
 <ul>
 <li>Nhấp vào bộ lọc <strong>&ldquo;Attribute&rdquo;</strong>, chọn <strong>&ldquo;Event source&rdquo;</strong>.</li>
 <li>Trong trường bên cạnh, gõ <code>ecr.amazonaws.com</code> và nhấn <code>Enter</code>.</li>
@@ -832,7 +832,7 @@
 
 </li>
 <li>
-<p><strong>Truy cập Log groups trong CloudWatch:</strong></p>
+<p>Truy cập Log groups trong CloudWatch:</p>
 <ul>
 <li>Trong thanh tìm kiếm AWS Console, gõ <code>CloudWatch</code> và chọn dịch vụ <strong>CloudWatch</strong>.</li>
 <li>Trong bảng điều khiển CloudWatch, chọn <strong>&ldquo;Log groups&rdquo;</strong> dưới phần <strong>&ldquo;Logs&rdquo;</strong>.</li>
@@ -843,7 +843,7 @@
 
 </li>
 <li>
-<p><strong>Tìm Log group của CloudTrail:</strong></p>
+<p>Tìm Log group của CloudTrail:</p>
 <ul>
 <li>Trong danh sách Log group, tìm Log group mà CloudTrail đang gửi nhật ký tới (đã cấu hình ở Bước 4).</li>
 <li>Nhấp vào tên của Log group đó để xem các luồng nhật ký.</li>
@@ -1233,19 +1233,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752158393"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752158393"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752158393"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752158393"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752158393"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752158812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752158812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752158812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752158812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752158812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752158812"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752158393"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752158393"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752158812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752158812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752158812"></script>
 
-    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752158393" rel="stylesheet" />
-    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752158393"></script>
+    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752158812" rel="stylesheet" />
+    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752158812"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

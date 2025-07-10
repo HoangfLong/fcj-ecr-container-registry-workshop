@@ -23,13 +23,13 @@ Trong phần này, bạn sẽ học cách:
 
 ### Thiết lập CloudTrail để giám sát ECR
 
-1.  **Đăng nhập và truy cập CloudTrail:**
+1.  Đăng nhập và truy cập CloudTrail:
     * Đăng nhập vào [AWS Management Console](https://aws.amazon.com/console/).
     * Trong thanh tìm kiếm, gõ `CloudTrail` và chọn dịch vụ **CloudTrail** từ kết quả.
 
     {{< figure src="/fcj-ecr-container-registry-workshop/images/6/6.1/001.png" alt="Tìm kiếm và chọn dịch vụ CloudTrail" >}}
 
-2.  **Kiểm tra trạng thái Trail và quyết định hành động:**
+2.  Kiểm tra trạng thái Trail và quyết định hành động:
     * Trong bảng điều khiển CloudTrail, chọn **"Trails"** từ menu bên trái.
     * Kiểm tra xem bạn đã có Trail nào đang hoạt động và gửi nhật ký đến CloudWatch Logs chưa.
         * **Nếu cần tạo Trail mới hoặc cấu hình Trail hiện có:** Tiếp tục với **Bước 3**.
@@ -37,13 +37,13 @@ Trong phần này, bạn sẽ học cách:
 
     {{< figure src="/fcj-ecr-container-registry-workshop/images/6/6.1/002.png" alt="Kiểm tra danh sách Trails trong CloudTrail" >}}
 
-3.  **Tạo hoặc chỉnh sửa Trail để gửi nhật ký đến CloudWatch Logs:**
+3.  Tạo hoặc chỉnh sửa Trail để gửi nhật ký đến CloudWatch Logs:
     * **Nếu tạo Trail mới:** Nhấp vào **"Create trail"**.
     * **Nếu chỉnh sửa Trail hiện có:** Nhấp vào tên Trail đó, sau đó tìm phần **"CloudWatch Logs"** và nhấp **"Edit"**.
 
     {{< figure src="/fcj-ecr-container-registry-workshop/images/6/6.1/003.png" alt="Bắt đầu tạo hoặc chỉnh sửa Trail" >}}
 
-4.  **Cấu hình chi tiết Trail (nếu tạo mới):**
+4.  Cấu hình chi tiết Trail (nếu tạo mới):
     * **Trail name:** Đặt tên cho Trail (ví dụ: `ecr-monitor-trail`).
     * **Storage location:** Chọn **"Create new S3 bucket"** và đặt tên (hoặc dùng bucket hiện có).
     * **CloudWatch Logs:** **Chọn "Enabled"**. Chọn **"New"** để tạo Log group mới (ví dụ: `/aws/cloudtrail/ecr-logs`) hoặc chọn Log group hiện có.
@@ -51,13 +51,13 @@ Trong phần này, bạn sẽ học cách:
 
     {{< figure src="/fcj-ecr-container-registry-workshop/images/6/6.1/004.png" alt="Cấu hình tên Trail, S3 bucket và CloudWatch Logs" >}}
 
-5.  **Cấu hình chi tiết Trail (tiếp theo):**
+5.  Cấu hình chi tiết Trail (tiếp theo):
     * Nhấp **"Next"**.
     * Trong phần **"Choose log events"**, đảm bảo **"Management events"** được chọn.
 
     {{< figure src="/fcj-ecr-container-registry-workshop/images/6/6.1/005.png" alt="Chọn 'Management events' cho Trail" >}}
 
-6.  **Hoàn tất tạo Trail:**
+6.  Hoàn tất tạo Trail:
     * Nhấp **"Next"**.
     * Nhấp **"Create trail"** (nếu tạo mới) hoặc **"Save changes"** (nếu chỉnh sửa).
 
@@ -65,24 +65,24 @@ Trong phần này, bạn sẽ học cách:
 
 ### Xem và phân tích nhật ký ECR
 
-7.  **Truy cập Lịch sử Sự kiện CloudTrail:**
+7.  Truy cập Lịch sử Sự kiện CloudTrail:
     * Trong bảng điều khiển CloudTrail, chọn **"Event history"** từ menu bên trái.
 
     {{< figure src="/fcj-ecr-container-registry-workshop/images/6/6.1/007.png" alt="Chọn 'Event history' trong CloudTrail" >}}
 
-8.  **Lọc sự kiện theo ECR:**
+8.  Lọc sự kiện theo ECR:
     * Nhấp vào bộ lọc **"Attribute"**, chọn **"Event source"**.
     * Trong trường bên cạnh, gõ `ecr.amazonaws.com` và nhấn `Enter`.
 
     {{< figure src="/fcj-ecr-container-registry-workshop/images/6/6.1/008.png" alt="Lọc lịch sử sự kiện CloudTrail theo ECR" >}}
 
-9.  **Truy cập Log groups trong CloudWatch:**
+9.  Truy cập Log groups trong CloudWatch:
     * Trong thanh tìm kiếm AWS Console, gõ `CloudWatch` và chọn dịch vụ **CloudWatch**.
     * Trong bảng điều khiển CloudWatch, chọn **"Log groups"** dưới phần **"Logs"**.
 
     {{< figure src="/fcj-ecr-container-registry-workshop/images/6/6.1/009.png" alt="Truy cập Log groups trong CloudWatch" >}}
 
-10. **Tìm Log group của CloudTrail:**
+10. Tìm Log group của CloudTrail:
     * Trong danh sách Log group, tìm Log group mà CloudTrail đang gửi nhật ký tới (đã cấu hình ở Bước 4).
     * Nhấp vào tên của Log group đó để xem các luồng nhật ký.
 

@@ -12,21 +12,21 @@
     <title>Quản lý vòng đời Image ECR :: Tạo mới tài khoản AWS</title>
 
     
-    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752158393" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752158393" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752158393" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752158393" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752158393" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752158393" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752158393" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752158393" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752158812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752158812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752158812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752158812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752158812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752158812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752158812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752158812" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752158812" rel="stylesheet">
     
-    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752158393" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752158812" rel="stylesheet">
     
     
 
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752158812"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752158393"></script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752158393"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752158812"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752158812"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/fcj-ecr-container-registry-workshop\/\/vi";
     
 </script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752158393"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752158812"></script>
 
     
   </div>
@@ -738,7 +738,7 @@
 <p>Bây giờ chúng ta sẽ tạo một chính sách vòng đời cho repository <code>fcj-workshop-app</code> của mình.</p>
 <ol>
 <li>
-<p><strong>Đảm bảo bạn đang ở bảng điều khiển ECR:</strong></p>
+<p>Đảm bảo bạn đang ở bảng điều khiển ECR:</p>
 <ul>
 <li>Trong thanh tìm kiếm của AWS Console, gõ &ldquo;ECR&rdquo; và chọn <strong>Elastic Container Registry</strong>.
 <figure><img src="/fcj-ecr-container-registry-workshop/images/5/5.3/001.png"
@@ -748,13 +748,13 @@
 </ul>
 </li>
 <li>
-<p><strong>Chọn Repository <code>fcj-workshop-app</code>:</strong></p>
+<p>Chọn Repository <code>fcj-workshop-app</code>:</p>
 <ul>
 <li>Trong danh sách các repository, nhấp vào tên repository <code>fcj-workshop-app</code> của bạn.</li>
 </ul>
 </li>
 <li>
-<p><strong>Chuyển đến tab &ldquo;Lifecycle policy&rdquo;:</strong></p>
+<p>Chuyển đến tab &ldquo;Lifecycle policy&rdquo;:</p>
 <ul>
 <li>Trong trang chi tiết của repository <code>fcj-workshop-app</code>, nhấp vào tab <strong>Lifecycle policy</strong>.
 <figure><img src="/fcj-ecr-container-registry-workshop/images/5/5.3/002.png"
@@ -764,7 +764,7 @@
 </ul>
 </li>
 <li>
-<p><strong>Nhấp vào nút &ldquo;Create rule&rdquo;:</strong></p>
+<p>Nhấp vào nút &ldquo;Create rule&rdquo;:</p>
 <ul>
 <li>Tại tab &ldquo;Lifecycle policy&rdquo;, bạn sẽ thấy nút <strong>Create rule</strong>. Nhấp vào đó để bắt đầu định nghĩa các rule cho chính sách.
 <figure><img src="/fcj-ecr-container-registry-workshop/images/5/5.3/003.png"
@@ -778,7 +778,7 @@
 
 </li>
 <li>
-<p><strong>Cấu hình Quy tắc đầu tiên: Xóa các Image chưa được gắn thẻ (Untagged Images):</strong></p>
+<p>Cấu hình Quy tắc đầu tiên: Xóa các Image chưa được gắn thẻ (Untagged Images):</p>
 <ul>
 <li>Thêm một quy tắc mới với các cài đặt sau:
 <ul>
@@ -796,7 +796,7 @@
 </ul>
 </li>
 <li>
-<p><strong>Cấu hình Quy tắc 2: Giữ lại 3 Image gần nhất được gắn thẻ và xóa các Image cũ hơn:</strong></p>
+<p>Cấu hình Quy tắc 2: Giữ lại 3 Image gần nhất được gắn thẻ và xóa các Image cũ hơn:</p>
 <ul>
 <li>Nhấp &ldquo;Create rule&rdquo; một lần nữa và cấu hình quy tắc thứ hai với các cài đặt sau:
 <ul>
@@ -820,14 +820,14 @@
 
 </li>
 <li>
-<p><strong>Đẩy thêm Image lên Repository để kiểm tra chính sách:</strong></p>
+<p>Đẩy thêm Image lên Repository để kiểm tra chính sách:</p>
 <ul>
 <li>Để có đủ dữ liệu cho chính sách vòng đời hoạt động và để bạn có thể thấy kết quả mô phỏng rõ ràng, hãy lặp lại các bước đẩy image lên ECR repository (như đã thực hiện trong mục 4.3. <a href="/fcj-ecr-container-registry-workshop/vi/4-ci-cd-with-github-actions/4.3-run-pipeline/">Chạy và test thử Pipeline</a>).</li>
 <li>Bạn nên đẩy thêm khoảng <strong>5 image mới</strong> với các tag khác nhau (ví dụ: <code>v0.0.2</code>, <code>v0.0.3</code>, <code>v0.0.4</code>, <code>v0.0.5</code>, <code>v0.0.6</code>). Đảm bảo mỗi lần đẩy là một phiên bản mới để tạo ra các image riêng biệt.</li>
 </ul>
 </li>
 <li>
-<p><strong>Chạy thử chính sách (Simulate policy) để xem trước tác động:</strong></p>
+<p>Chạy thử chính sách (Simulate policy) để xem trước tác động:</p>
 <ul>
 <li>
 <p>Sau khi đã <strong>định nghĩa tất cả các quy tắc</strong> cho chính sách, bạn nên chạy thử để xem những image nào sẽ bị ảnh hưởng (xóa) trước khi áp dụng thực tế. Trên giao diện tạo chính sách.</p>
@@ -851,7 +851,7 @@
 </ul>
 </li>
 <li>
-<p><strong>Chọn rule mà bạn muốn xem run test:</strong></p>
+<p>Chọn rule mà bạn muốn xem run test:</p>
 <ul>
 <li>Chọn run test
 <figure><img src="/fcj-ecr-container-registry-workshop/images/5/5.3/007.png"
@@ -861,7 +861,7 @@
 </ul>
 </li>
 <li>
-<p><strong>Kiểm tra run test chạy:</strong></p>
+<p>Kiểm tra run test chạy:</p>
 <figure><img src="/fcj-ecr-container-registry-workshop/images/5/5.3/008.png"
         alt="Chính sách vòng đời đã được tạo thành công">
     </figure>
@@ -1186,19 +1186,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752158393"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752158393"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752158393"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752158393"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752158393"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752158812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752158812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752158812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752158812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752158812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752158812"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752158393"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752158393"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752158393"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752158812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752158812"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752158812"></script>
 
-    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752158393" rel="stylesheet" />
-    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752158393"></script>
+    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752158812" rel="stylesheet" />
+    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752158812"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
