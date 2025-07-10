@@ -1,125 +1,125 @@
 [
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/",
 	"title": "Container Registry Management with ECR and Security Policies",
 	"tags": [],
 	"description": "",
 	"content": "Container Registry Management with ECR and Security Policies Overview In this workshop, you will implement a comprehensive container registry management system using Amazon Elastic Container Registry (ECR). The content focuses on designing a secure, efficient, and professional container management workflow, fully integrated with:\nSecurity policies (IAM) Vulnerability scanning (Amazon Inspector) Granular access control Lifecycle automation and CI/CD deployment Monitoring and alerting (CloudWatch \u0026amp; SNS) Compliance validation and cost optimization You will learn to design the system following a DevSecOps approach, where container images are scanned before deployment, access is tightly controlled, and old resources are automatically cleaned up to reduce cost.\nBy the end of this workshop, you will be able to: Apply security policies using IAM, demonstrating how ECR interacts with services like CodeBuild, ECS, and Lambda Integrate Amazon Inspector to automatically scan container images for vulnerabilities upon image push Implement granular access controls, ensuring users and services only have the permissions they need Configure ECR lifecycle policies to automatically clean up unused or untagged images and optimize storage cost Design an automated CI/CD pipeline that triggers security scans when new images are pushed Set up monitoring and alerts to notify you of potential security threats or suspicious activities Build a production-ready DevSecOps pipeline for managing containers securely and efficiently on AWS Workshop Content Introduction Prerequisites IAM Configuration CI/CD with GitHub Actions ECR Security \u0026amp; Lifecycle Management Monitoring \u0026amp; Alerts Clean-up Resources Let’s begin building a secure, optimized, and automated container registry on AWS!\n"
 },
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/6-monitoring-alerts/6.1-cloudtrail-cloudwatch/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/6-monitoring-alerts/6.1-cloudtrail-cloudwatch/",
 	"title": "CloudTrail and CloudWatch",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/3-iam-configuration/3.1-set-up-iam/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/3-iam-configuration/3.1-set-up-iam/",
 	"title": "Configure IAM Roles and Policies",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/1-introduction/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/1-introduction/",
 	"title": "Introduction",
 	"tags": [],
 	"description": "",
 	"content": "Architecture "
 },
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/4-ci-cd-with-github-actions/4.1-prepare-github-repo/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/4-ci-cd-with-github-actions/4.1-prepare-github-repo/",
 	"title": "Prepare GitHub Repository",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.1-repository-policy/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.1-repository-policy/",
 	"title": "Repository Access Policy",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/4-ci-cd-with-github-actions/4.2-build-github-actions/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/4-ci-cd-with-github-actions/4.2-build-github-actions/",
 	"title": "GitHub Actions Workflow",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/2-prerequisites/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/2-prerequisites/",
 	"title": "Prerequisites",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.2-inspector-vulnerability-scan/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.2-inspector-vulnerability-scan/",
 	"title": "Vulnerability Scanning with Inspector",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/4-ci-cd-with-github-actions/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/4-ci-cd-with-github-actions/",
 	"title": "CI/CD with GitHub Actions",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/3-iam-configuration/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/3-iam-configuration/",
 	"title": "IAM Configuration",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/",
 	"title": "Image Lifecycle Management",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/4-ci-cd-with-github-actions/4.3-run-pipeline/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/4-ci-cd-with-github-actions/4.3-run-pipeline/",
 	"title": "Run and Test the Pipeline",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/",
 	"title": "ECR Security &amp; Lifecycle",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/6-monitoring-alerts/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/6-monitoring-alerts/",
 	"title": "Monitoring &amp; Alerts",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/7-clean-up-resources/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/7-clean-up-resources/",
 	"title": "Clean-up Resources",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/categories/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "http://localhost:1313/fcj-ecr-container-registry-workshop/tags/",
+	"uri": "https://hoangflong.github.io/fcj-ecr-container-registry-workshop/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",

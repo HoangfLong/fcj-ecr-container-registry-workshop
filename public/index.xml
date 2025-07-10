@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Container Registry Management with ECR and Security Policies on Create a new AWS account.</title>
-    <link>http://localhost:1313/fcj-ecr-container-registry-workshop/</link>
+    <link>https://hoangflong.github.io/fcj-ecr-container-registry-workshop/</link>
     <description>Recent content in Container Registry Management with ECR and Security Policies on Create a new AWS account.</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/fcj-ecr-container-registry-workshop/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hoangflong.github.io/fcj-ecr-container-registry-workshop/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

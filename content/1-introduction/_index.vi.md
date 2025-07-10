@@ -9,7 +9,8 @@ Trong workshop này, chúng ta sẽ xây dựng một giải pháp toàn diện 
 
 #### Kiến trúc tổng quan
 
-{{< figure src="images/1/001.png" alt="Kiến trúc tổng quan của workshop quản lý ECR">}}
+![Kiến trúc tổng quan](images/1/001.png)
+
 
 Kiến trúc trên minh họa luồng hoạt động chính trong workshop này:
 
