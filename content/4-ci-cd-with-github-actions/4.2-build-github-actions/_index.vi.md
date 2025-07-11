@@ -18,8 +18,6 @@ Trong phần này, chúng ta sẽ **xem xét và phân tích kiến trúc của 
 File **main.yml** nằm trong thư mục **.github/workflows/** của repository. Đây là nơi định nghĩa toàn bộ luồng CI/CD của bạn.
 
 
-
-
 1.  Nội dung file **.github/workflows/main.yml:**
     
     ```yaml

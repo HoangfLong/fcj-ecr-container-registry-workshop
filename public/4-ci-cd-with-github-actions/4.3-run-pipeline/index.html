@@ -12,21 +12,21 @@
     <title>Run and Test the Pipeline :: Create a new AWS account.</title>
 
     
-    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752160031" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752202651" rel="stylesheet">
     
-    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752160031" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752202651" rel="stylesheet">
     
     
 
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752202651"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752160031"></script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752160031"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752202651"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752202651"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/fcj-ecr-container-registry-workshop\/";
     
 </script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752160031"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752202651"></script>
 
     
   </div>
@@ -409,13 +409,13 @@
  
   
     
-    <li data-nav-id="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/" title="Image Lifecycle Management" class="dd-item 
+    <li data-nav-id="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/" title="ECR Image Lifecycle Management" class="dd-item 
         
         
         
         ">
       <a href="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/">
-          <b> 4.3. </b>Image Lifecycle Management
+          <b> 5.3. </b>ECR Image Lifecycle Management
           
             <i class="fas fa-check read-icon"></i>
           
@@ -684,7 +684,18 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+        <li><a href="#triggering-the-cicd-pipeline">Triggering the CI/CD Pipeline</a></li>
+        <li><a href="#monitoring-the-pipeline-run">Monitoring the Pipeline Run</a></li>
+        <li><a href="#verifying-pipeline-results">Verifying Pipeline Results</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -708,7 +719,103 @@
 
 
 
-	
+	<p>Now that you have configured GitHub Repository Secrets and understood the GitHub Actions Workflow, we will trigger the CI/CD pipeline to verify that everything is working as expected.</p>
+<h4 id="objectives-of-this-section">Objectives of this section</h4>
+<ul>
+<li>Trigger the CI/CD pipeline by pushing changes to GitHub.</li>
+<li>Monitor the workflow run on the GitHub Actions interface.</li>
+<li>Verify the results: check for the newly created Git tag and the Docker image on Amazon ECR.</li>
+</ul>
+<h3 id="triggering-the-cicd-pipeline">Triggering the CI/CD Pipeline</h3>
+<p>Your CI/CD pipeline is configured to automatically run every time code is pushed to the <code>main</code> branch. To trigger the pipeline, we will make a small change and push it to the repository.</p>
+<ol>
+<li>
+<p><strong>Make a small change:</strong></p>
+<ul>
+<li>Open the <code>aws-container-security-workshop</code> project folder on your local machine.</li>
+<li>Open the file <code>fcj\src\static\js\app.js</code> (or any other file, e.g., add a comment to a source code file).</li>
+<li>Add the text <code>v1.0.0</code> to line <strong>56</strong> in the <code>src\static\js\app.js</code> file.</li>
+<li>Save the file.
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.3/0011.png"
+        alt="Access folder">
+    </figure>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Push changes to GitHub:</strong></p>
+<ul>
+<li>Open Terminal/Command Prompt (ensure you are in the project directory).</li>
+<li>Add the changes to the staging area:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git add .
+</span></span></code></pre></div></li>
+<li>Create a commit with a clear message:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git commit -m <span style="color:#e6db74">&#34;Trigger CI/CD pipeline for testing&#34;</span>
+</span></span></code></pre></div></li>
+<li>Push this commit to the <code>main</code> branch of your GitHub repository:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push origin main
+</span></span></code></pre></div></li>
+</ul>
+
+<div class="notices note" ><p>Immediately after you push code to the <code>main</code> branch, GitHub Actions will automatically detect the change and start running the <code>CI/CD Pipeline</code> workflow you configured.</p>
+</div>
+
+</li>
+</ol>
+<h3 id="monitoring-the-pipeline-run">Monitoring the Pipeline Run</h3>
+<p>Now, navigate to GitHub and monitor the pipeline&rsquo;s progress.</p>
+<ol start="3">
+<li>
+<p><strong>Access GitHub Actions:</strong></p>
+<ul>
+<li>Open your browser and navigate to your repository on GitHub.</li>
+<li>Click on the <strong>Actions</strong> tab.</li>
+</ul>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.3/001.png"
+        alt="Access Actions tab on GitHub">
+    </figure>
+
+</li>
+<li>
+<p><strong>View Workflow Status:</strong></p>
+<ul>
+<li>You will see a workflow named <code>CI/CD Pipeline</code> with an <code>In progress</code> or <code>Queued</code> status.</li>
+<li>Click on the name of the workflow that just ran (based on the commit message you just created) to view details.</li>
+</ul>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.3/002.png"
+        alt="List of workflow runs on GitHub Actions">
+    </figure>
+
+</li>
+<li>
+<p><strong>Check Job Steps:</strong></p>
+<ul>
+<li>On the workflow details page, you will see the <code>build-and-push</code> job. Click on it to see the specific steps being executed.</li>
+<li>Monitor the output logs of each step to ensure they complete successfully. You will see steps like <code>checkout</code>, <code>configure aws credentials</code>, <code>login to amazon ECR</code>, <code>Automatic Tagging of Releases</code>, and <code>build, tag, and push the image to ECR</code> running sequentially.</li>
+<li>Ensure that all steps have a green checkmark (success). If any step fails, review the logs to identify the cause of the error.</li>
+</ul>
+<p><figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.3/003.png"
+        alt="Details of steps in a GitHub Actions job">
+    </figure>
+
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.3/003-b.png"
+        alt="Details of steps in a GitHub Actions job">
+    </figure>
+</p>
+</li>
+</ol>
+<h3 id="verifying-pipeline-results">Verifying Pipeline Results</h3>
+<p>After the workflow successfully completes, we need to verify that the expected results have been generated.</p>
+<ol start="6">
+<li><strong>Check New Git Tag on GitHub:</strong>
+<ul>
+<li>Return to the main page of your repository on GitHub.</li>
+<li>Click on <strong>&ldquo;Tags&rdquo;</strong> or <strong>&ldquo;Releases&rdquo;</strong> (usually located in the right sidebar or under the &ldquo;Code&rdquo; section).</li>
+<li>You should see a new Git tag created with an incremented version (e.g., `v0.0.1</li>
+</ul>
+</li>
+</ol>
+
 
 
 
@@ -1024,19 +1131,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752202651"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752202651"></script>
 
-    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752160031" rel="stylesheet" />
-    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752160031"></script>
+    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752202651" rel="stylesheet" />
+    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752202651"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

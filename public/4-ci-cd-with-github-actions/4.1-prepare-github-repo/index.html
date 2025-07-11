@@ -12,21 +12,21 @@
     <title>Prepare GitHub Repository :: Create a new AWS account.</title>
 
     
-    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752160031" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752202651" rel="stylesheet">
     
-    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752160031" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752202651" rel="stylesheet">
     
     
 
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752202651"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752160031"></script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752160031"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752202651"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752202651"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/fcj-ecr-container-registry-workshop\/";
     
 </script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752160031"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752202651"></script>
 
     
   </div>
@@ -409,13 +409,13 @@
  
   
     
-    <li data-nav-id="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/" title="Image Lifecycle Management" class="dd-item 
+    <li data-nav-id="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/" title="ECR Image Lifecycle Management" class="dd-item 
         
         
         
         ">
       <a href="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/">
-          <b> 4.3. </b>Image Lifecycle Management
+          <b> 5.3. </b>ECR Image Lifecycle Management
           
             <i class="fas fa-check read-icon"></i>
           
@@ -684,7 +684,18 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+        <li><a href="#clone-repository-to-local-machine">Clone Repository to Local Machine</a></li>
+        <li><a href="#create-a-new-repository-on-personal-github-and-push-source-code">Create a New Repository on Personal GitHub and Push Source Code</a></li>
+        <li><a href="#configure-github-repository-secrets">Configure GitHub Repository Secrets</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -708,7 +719,116 @@
 
 
 
-	
+	<p>To set up the CI/CD pipeline with GitHub Actions, we first need to prepare the repository containing the sample application source code and configure secure environment variables (secrets) in GitHub.</p>
+<h4 id="objectives-of-this-section">Objectives of this section</h4>
+<ul>
+<li>Clone the application source code repository to your local machine.</li>
+<li>Create a new GitHub Repository in your personal account.</li>
+<li>Push the cloned source code to the newly created GitHub Repository.</li>
+<li>Configure GitHub Repository Secrets to store AWS credentials and the ECR URI.</li>
+</ul>
+<h3 id="clone-repository-to-local-machine">Clone Repository to Local Machine</h3>
+<p>You need to clone the repository containing the sample application source code to your local machine so you can modify and push code to your own repository.</p>
+<ol>
+<li>
+<p><strong>Open Terminal / Command Prompt:</strong> Open a command line window on your computer.</p>
+</li>
+<li>
+<p><strong>Clone the original Repository:</strong> Download the source code from the sample repository to your machine.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/HoangfLong/aws-container-security-workshop.git
+</span></span></code></pre></div><figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.1/001.png"
+        alt="Clone sample repository to local machine">
+    </figure>
+
+</li>
+</ol>
+<h3 id="create-a-new-repository-on-personal-github-and-push-source-code">Create a New Repository on Personal GitHub and Push Source Code</h3>
+<p>After cloning the source code, you need to create a new repository on your GitHub account and push this source code to it. This will be the repository that your GitHub Actions will monitor.</p>
+<ol start="3">
+<li>
+<p><strong>Create a New Repository on GitHub:</strong></p>
+<ul>
+<li>Log in to your GitHub account.</li>
+<li>Click the <strong>+</strong> sign in the top-right corner, then select <strong>New repository</strong>. Name your repository (e.g., <code>aws-container-security-workshop-my-repo</code>), choose <strong>Public</strong> or <strong>Private</strong> as desired, and <strong>DO NOT</strong> check &ldquo;Add a README file&rdquo; or other initialization options. Finally, click <strong>Create repository</strong>.</li>
+</ul>
+<p><figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.1/002.png"
+        alt="Create new repository on GitHub">
+    </figure>
+
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.1/003.png"
+        alt="Fill in information and create new repository">
+    </figure>
+</p>
+</li>
+<li>
+<p><strong>Link and Push Source Code to the New Repository:</strong></p>
+<ul>
+<li>Return to your Terminal/Command Prompt (ensure you are in the cloned project directory).</li>
+<li>Remove the old remote link (if any):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote remove origin
+</span></span></code></pre></div></li>
+<li>Add a link to your new repository on GitHub:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git remote add origin <span style="color:#f92672">[</span>https://github.com/YOUR_GITHUB_USERNAME/YOUR_NEW_REPOSITORY_NAME.git<span style="color:#f92672">](</span>https://github.com/YOUR_GITHUB_USERNAME/YOUR_NEW_REPOSITORY_NAME.git<span style="color:#f92672">)</span>
+</span></span></code></pre></div><em>(Replace <code>YOUR_GITHUB_USERNAME</code> and <code>YOUR_NEW_REPOSITORY_NAME</code> with your information).</em></li>
+<li>Rename the default branch to <code>main</code> (if needed):
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git branch -M main
+</span></span></code></pre></div></li>
+<li>Push the source code to your new repository:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git push -u origin main
+</span></span></code></pre></div><em>(You may be asked to log in using your GitHub username and Personal Access Token).</em></li>
+</ul>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.1/003-b.png"
+        alt="Connect and push source code to new repository">
+    </figure>
+
+</li>
+</ol>
+<h3 id="configure-github-repository-secrets">Configure GitHub Repository Secrets</h3>
+<p>For GitHub Actions to securely interact with your AWS account and Amazon ECR, we need to store sensitive information (like the IAM User&rsquo;s Access Key, Secret Key, AWS Region, and ECR URI) as GitHub Repository Secrets. This ensures these details are not exposed in your source code or workflow logs.</p>
+<ol start="5">
+<li>
+<p><strong>Access Repository Settings:</strong> From your pushed-code repository page on GitHub, click on the <strong>Settings</strong> tab.</p>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.1/004.png"
+        alt="Settings tab on GitHub Repository">
+    </figure>
+
+</li>
+<li>
+<p><strong>Select Secrets and Variables:</strong> In the left navigation pane, scroll down and select <strong>Secrets and variables</strong>, then choose <strong>Actions</strong>.</p>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.1/005.png"
+        alt="Select Secrets and variables -&gt; Actions">
+    </figure>
+
+</li>
+<li>
+<p><strong>Add Required Secrets:</strong> Click the <strong>New repository secret</strong> button to add each secret one by one:</p>
+<ul>
+<li>
+<p><code>AWS_ACCESS_KEY_ID</code>: Paste the <strong>Access Key ID</strong> value created in AWS (from Section 3.1).</p>
+</li>
+<li>
+<p><code>AWS_REGION</code>: Paste your <strong>AWS Region</strong> value (e.g., <code>ap-southeast-1</code> or <code>us-east-1</code>). <em>(Choose the Region where you created the IAM User and ECR Repository).</em></p>
+</li>
+<li>
+<p><code>AWS_SECRET_ACCESS_KEY</code>: Paste the <strong>Secret Access Key</strong> value created in AWS (from Section 3.1).</p>
+</li>
+<li>
+<p><code>ECR_REPOSITORY_URI</code>: Paste the <strong>URI</strong> of your <code>fcj-workshop-app</code> ECR Repository (from Section 3.1).</p>
+</li>
+</ul>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/4/4.1/006.png"
+        alt="Add GitHub Secrets">
+    </figure>
+
+
+<div class="notices note" ><pre><code>After adding, you will see these four secrets in the list. They will be used securely by GitHub Actions without being exposed.
+</code></pre>
+</div>
+
+</li>
+</ol>
+<hr>
+
 
 
 
@@ -1021,19 +1141,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752202651"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752202651"></script>
 
-    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752160031" rel="stylesheet" />
-    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752160031"></script>
+    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752202651" rel="stylesheet" />
+    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752202651"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

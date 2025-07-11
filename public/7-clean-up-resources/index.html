@@ -12,21 +12,21 @@
     <title>Clean-up Resources :: Create a new AWS account.</title>
 
     
-    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752160031" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752202651" rel="stylesheet">
     
-    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752160031" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752202651" rel="stylesheet">
     
     
 
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752202651"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752160031"></script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752160031"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752202651"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752202651"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/fcj-ecr-container-registry-workshop\/";
     
 </script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752160031"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752202651"></script>
 
     
   </div>
@@ -409,13 +409,13 @@
  
   
     
-    <li data-nav-id="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/" title="Image Lifecycle Management" class="dd-item 
+    <li data-nav-id="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/" title="ECR Image Lifecycle Management" class="dd-item 
         
         
         
         ">
       <a href="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/">
-          <b> 4.3. </b>Image Lifecycle Management
+          <b> 5.3. </b>ECR Image Lifecycle Management
           
             <i class="fas fa-check read-icon"></i>
           
@@ -678,7 +678,16 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#1-delete-ecr-repositories">1. Delete ECR Repositories</a></li>
+    <li><a href="#2-delete-cloudwatch-dashboards">2. Delete CloudWatch Dashboards</a></li>
+    <li><a href="#3-delete-cloudtrail-trail">3. Delete CloudTrail Trail</a></li>
+    <li><a href="#4-delete-cloudtrail-s3-bucket">4. Delete CloudTrail S3 Bucket</a></li>
+    <li><a href="#5-delete-cloudwatch-log-group">5. Delete CloudWatch Log Group</a></li>
+    <li><a href="#6-delete-iam-role-optional">6. Delete IAM Role (Optional)</a></li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -702,7 +711,41 @@
 
 
 
-	
+	<p>To avoid incurring unnecessary costs and to keep your AWS environment tidy, follow the steps below to delete all resources created or configured during this workshop.</p>
+<p><strong>Note:</strong> Make sure you&rsquo;re in the <strong>correct AWS Region</strong> where the resources were created.</p>
+<h2 id="1-delete-ecr-repositories">1. Delete ECR Repositories</h2>
+<ul>
+<li>Go to <strong>Amazon ECR</strong>.</li>
+<li>Delete the <strong>ECR repositories</strong> you created (e.g., <code>my-test-repo</code>, <code>my-brand-new-test-repo-09-07-2340</code>).</li>
+</ul>
+<h2 id="2-delete-cloudwatch-dashboards">2. Delete CloudWatch Dashboards</h2>
+<ul>
+<li>Go to <strong>Amazon CloudWatch</strong>.</li>
+<li>Delete the <strong>CloudWatch dashboard</strong> you created (e.g., <code>ECR-Operations-Dashboard</code>).</li>
+</ul>
+<h2 id="3-delete-cloudtrail-trail">3. Delete CloudTrail Trail</h2>
+<ul>
+<li>Go to <strong>AWS CloudTrail</strong>.</li>
+<li>Delete the <strong>Trail</strong> you created or configured (e.g., <code>ecr-monitor-trail</code>).</li>
+</ul>
+<h2 id="4-delete-cloudtrail-s3-bucket">4. Delete CloudTrail S3 Bucket</h2>
+<ul>
+<li>Go to <strong>Amazon S3</strong>.</li>
+<li>Empty the <strong>S3 bucket</strong> that CloudTrail used to store logs.</li>
+<li>Then <strong>delete the S3 bucket</strong>.</li>
+</ul>
+<h2 id="5-delete-cloudwatch-log-group">5. Delete CloudWatch Log Group</h2>
+<ul>
+<li>Go to <strong>CloudWatch Logs</strong>.</li>
+<li>Delete the <strong>Log Group</strong> where CloudTrail sent logs (e.g., <code>/aws/cloudtrail/ecr-logs</code> or <code>aws-cloudtrail-logs-fg</code>).</li>
+</ul>
+<h2 id="6-delete-iam-role-optional">6. Delete IAM Role (Optional)</h2>
+<ul>
+<li>Go to <strong>AWS IAM</strong>.</li>
+<li>Delete the <strong>IAM Role</strong> that CloudTrail used to send logs to CloudWatch Logs (usually named starting with <code>CloudTrail_CloudWatchLogs_Role</code>).</li>
+</ul>
+<hr>
+
 
 
 
@@ -1011,19 +1054,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752202651"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752202651"></script>
 
-    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752160031" rel="stylesheet" />
-    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752160031"></script>
+    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752202651" rel="stylesheet" />
+    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752202651"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

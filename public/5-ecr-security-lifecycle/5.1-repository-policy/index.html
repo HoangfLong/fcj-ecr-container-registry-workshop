@@ -12,21 +12,21 @@
     <title>Repository Access Policy :: Create a new AWS account.</title>
 
     
-    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752160031" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752202651" rel="stylesheet">
     
-    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752160031" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752202651" rel="stylesheet">
     
     
 
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752202651"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752160031"></script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752160031"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752202651"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752202651"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/fcj-ecr-container-registry-workshop\/";
     
 </script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752160031"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752202651"></script>
 
     
   </div>
@@ -409,13 +409,13 @@
  
   
     
-    <li data-nav-id="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/" title="Image Lifecycle Management" class="dd-item 
+    <li data-nav-id="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/" title="ECR Image Lifecycle Management" class="dd-item 
         
         
         
         ">
       <a href="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/">
-          <b> 4.3. </b>Image Lifecycle Management
+          <b> 5.3. </b>ECR Image Lifecycle Management
           
             <i class="fas fa-check read-icon"></i>
           
@@ -684,7 +684,18 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+        <li><a href="#repository-policy-concept-and-distinction-from-iam-policies">Repository Policy Concept and Distinction from IAM Policies</a></li>
+        <li><a href="#configuring-repository-policy">Configuring Repository Policy</a></li>
+        <li><a href="#repository-policy-explanation">Repository Policy Explanation</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -708,7 +719,144 @@
 
 
 
-	
+	<p>In this section, we will delve into <strong>Repository Access Policies in AWS ECR</strong>, a powerful feature that allows you to finely control which users or services can interact with the Docker images in your repository. Unlike Identity-based IAM policies, a Repository Policy is a Resource-based policy directly attached to a specific ECR repository.</p>
+<p>This enables you to define access permissions (e.g., who can pull or push images) directly at the repository level, adding an additional layer of security and more granular access control.</p>
+<h4 id="objectives-of-this-section">Objectives of this section</h4>
+<ul>
+<li>Understand the role and importance of ECR Repository Policy.</li>
+<li>Clearly differentiate between IAM Identity-based policies and ECR Repository policies.</li>
+<li>Configure a Repository Policy to restrict or grant access.</li>
+<li>Apply the policy to enhance the security of your Docker images.</li>
+</ul>
+<h3 id="repository-policy-concept-and-distinction-from-iam-policies">Repository Policy Concept and Distinction from IAM Policies</h3>
+<p>To better understand Repository Policies, it&rsquo;s crucial to differentiate them from IAM Identity-based policies:</p>
+<ul>
+<li>
+<p><strong>IAM Identity-based Policies:</strong></p>
+<ul>
+<li>Attached to an <strong>IAM Principal</strong> (IAM user, group, or role).</li>
+<li>Determine <strong>what actions</strong> that Principal <em>is allowed</em> to perform <em>on which resources</em>.</li>
+<li>Example: An IAM policy might allow a specific user to perform the <code>ecr:PutImage</code> action on <em>all</em> ECR repositories in the account.</li>
+</ul>
+</li>
+<li>
+<p><strong>ECR Repository Policies (Resource-based Policies):</strong></p>
+<ul>
+<li>Attached directly to a <strong>specific resource</strong> (in this case, an ECR repository).</li>
+<li>Determine <strong>which Principals</strong> <em>are allowed</em> to perform <strong>what actions</strong> <em>on that specific resource itself</em>.</li>
+<li>Example: A Repository policy might allow an IAM role from another AWS account to access this particular repository.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Permission Evaluation Principle (&ldquo;AND&rdquo; Logic):</strong></p>
+<p>For a Principal to perform an action on an ECR repository, the action must be permitted by <strong>both</strong> policies:</p>
+<ol>
+<li>The Principal&rsquo;s IAM (Identity-based) policy <strong>must allow</strong> the action.</li>
+<li>The ECR Repository&rsquo;s (Resource-based) policy <strong>must allow</strong> the action for that Principal.</li>
+</ol>
+<p>If either policy explicitly denies (<code>Effect: Deny</code>) the action, then the action will be denied, regardless of whether the other policy allows it.</p>
+<p>This combination provides greater flexibility and detailed control, especially useful in cases such as:</p>
+<ul>
+<li>Granting cross-account access.</li>
+<li>Controlling access for a large number of Principals based on resource attributes.</li>
+</ul>
+<p>To learn more about the differences between policy types in AWS, you can refer to the official AWS documentation:</p>
+<ul>
+<li><a href="https://docs.aws.com/AmazonECR/latest/userguide/repository-policies.html#repository-policies-vs-iam-policies">Private repository policies in Amazon ECR - Repository policies vs IAM policies</a></li>
+<li><a href="https://docs.aws.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies and resource-based policies - AWS IAM User Guide</a></li>
+</ul>
+<h3 id="configuring-repository-policy">Configuring Repository Policy</h3>
+<p>We will configure a Repository Policy for the <code>fcj-workshop-app</code> repository to demonstrate how to control access. The example below will grant the <code>fcj-ecr-ci-cd-user</code> IAM user (which we created earlier) permissions to push and pull images from this repository.</p>
+<ol>
+<li>
+<p>Access the ECR service:</p>
+<ul>
+<li>In the search bar, type &ldquo;ECR&rdquo; and select <strong>Elastic Container Registry</strong>.
+<figure><img src="/fcj-ecr-container-registry-workshop/images/5/5.1/001-a.png"
+        alt="Select Repository in ECR">
+    </figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Select Repository:</p>
+<ul>
+<li>In the ECR dashboard, click <strong>Repositories</strong> in the left navigation pane.</li>
+<li>Find and click on your repository named <code>fcj-workshop-app</code>.</li>
+</ul>
+</li>
+<li>
+<p>Edit Repository Policy:</p>
+<ul>
+<li>On the <code>fcj-workshop-app</code> repository details page, click the <strong>Permissions</strong> tab.</li>
+<li>Click the <strong>Edit repository policy</strong> button.</li>
+</ul>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/5/5.1/002.png"
+        alt="Edit Repository Policy">
+    </figure>
+
+</li>
+<li>
+<p>Paste the Adjusted JSON Policy:</p>
+<ul>
+<li>A JSON editor will appear. Clear any existing content and <strong>paste the following secure JSON policy</strong> into it:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2008-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Sid&#34;</span>: <span style="color:#e6db74">&#34;AllowPushPullFromCICDUser&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Effect&#34;</span>: <span style="color:#e6db74">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Principal&#34;</span>: {
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;AWS&#34;</span>: <span style="color:#e6db74">&#34;arn:aws:iam::&lt;YOUR_AWS_ACCOUNT_ID&gt;:user/fcj-ecr-ci-cd-user&#34;</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;Action&#34;</span>: [
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;ecr:GetDownloadUrlForLayer&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;ecr:BatchGetImage&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;ecr:BatchCheckLayerAvailability&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;ecr:PutImage&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;ecr:InitiateLayerUpload&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;ecr:UploadLayerPart&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;ecr:CompleteLayerUpload&#34;</span>
+</span></span><span style="display:flex;"><span>      ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+<div class="notices info" ><p>Replace <code>&lt;YOUR_AWS_ACCOUNT_ID&gt;</code> with <strong>your AWS Account ID</strong>. You can find your AWS Account ID by clicking on your account name in the upper right corner of the AWS Management Console.</p>
+</div>
+
+<figure><img src="/fcj-ecr-container-registry-workshop/images/5/5.1/003.png"
+        alt="Paste Repository Policy JSON">
+    </figure>
+
+</li>
+<li>
+<p>Save policy and result:</p>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/5/5.1/004.png"
+        alt="result">
+    </figure>
+
+</li>
+</ol>
+<h3 id="repository-policy-explanation">Repository Policy Explanation</h3>
+<ul>
+<li><strong><code>Sid: &quot;AllowPushPullFromCICDUser&quot;</code></strong>
+Grants the IAM user <code>fcj-ecr-ci-cd-user</code> the necessary actions to pull and push Docker images:
+<ul>
+<li><code>ecr:GetDownloadUrlForLayer</code>: Retrieves the URL to download an image layer.</li>
+<li><code>ecr:BatchGetImage</code>: Retrieves metadata and configuration for multiple images.</li>
+<li><code>ecr:BatchCheckLayerAvailability</code>: Checks if image layers are available in the repository.</li>
+<li><code>ecr:PutImage</code>: Pushes an image manifest to the repository.</li>
+<li><code>ecr:InitiateLayerUpload</code>: Initiates the upload process for an image layer.</li>
+<li><code>ecr:UploadLayerPart</code>: Uploads a part of an image layer.</li>
+<li><code>ecr:CompleteLayerUpload</code>: Completes the image layer upload process.</li>
+</ul>
+</li>
+</ul>
+<p>You have successfully configured the Repository Access Policy for your ECR repository securely. This policy will enhance security by providing tighter control over access to your Docker images.</p>
+<hr>
+
 
 
 
@@ -1021,19 +1169,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752202651"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752202651"></script>
 
-    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752160031" rel="stylesheet" />
-    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752160031"></script>
+    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752202651" rel="stylesheet" />
+    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752202651"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

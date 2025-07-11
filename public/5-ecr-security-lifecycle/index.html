@@ -12,21 +12,21 @@
     <title>ECR Security &amp; Lifecycle :: Create a new AWS account.</title>
 
     
-    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752160031" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752202651" rel="stylesheet">
     
-    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752160031" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752202651" rel="stylesheet">
     
     
 
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752202651"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752160031"></script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752160031"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752202651"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752202651"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/fcj-ecr-container-registry-workshop\/";
     
 </script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752160031"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752202651"></script>
 
     
   </div>
@@ -409,13 +409,13 @@
  
   
     
-    <li data-nav-id="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/" title="Image Lifecycle Management" class="dd-item 
+    <li data-nav-id="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/" title="ECR Image Lifecycle Management" class="dd-item 
         
         
         
         ">
       <a href="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/">
-          <b> 4.3. </b>Image Lifecycle Management
+          <b> 5.3. </b>ECR Image Lifecycle Management
           
             <i class="fas fa-check read-icon"></i>
           
@@ -678,7 +678,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -702,7 +710,15 @@
 
 
 
-	
+	<p>After successfully building and pushing Docker images to Amazon ECR via the CI/CD pipeline, the next step is to ensure that these images are managed securely and efficiently throughout their lifecycle. Amazon ECR offers powerful features for vulnerability scanning and automated image version management, helping you maintain a clean and secure container registry.</p>
+<h4 id="objectives-of-this-section">Objectives of this section</h4>
+<ul>
+<li>Configure ECR Image Scanning to automatically detect security vulnerabilities.</li>
+<li>Understand how to view and analyze vulnerability scan results to take corrective actions.</li>
+<li>Configure ECR Lifecycle Policies to automatically delete old or unused image versions, optimizing costs and storage capacity.</li>
+<li>Grasp the benefits of applying image lifecycle management policies in a production environment.</li>
+</ul>
+
 
 
 
@@ -1014,19 +1030,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752202651"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752202651"></script>
 
-    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752160031" rel="stylesheet" />
-    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752160031"></script>
+    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752202651" rel="stylesheet" />
+    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752202651"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/fcj-ecr-container-registry-workshop/images/favicon.png" type="image/png">
 
-    <title>Image Lifecycle Management :: Create a new AWS account.</title>
+    <title>ECR Image Lifecycle Management :: Create a new AWS account.</title>
 
     
-    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752160031" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752202651" rel="stylesheet">
     
-    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752160031" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752202651" rel="stylesheet">
     
     
 
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752202651"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752160031"></script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752160031"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752202651"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752202651"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/fcj-ecr-container-registry-workshop\/";
     
 </script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752160031"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752202651"></script>
 
     
   </div>
@@ -409,13 +409,13 @@
  
   
     
-    <li data-nav-id="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/" title="Image Lifecycle Management" class="dd-item 
+    <li data-nav-id="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/" title="ECR Image Lifecycle Management" class="dd-item 
         
         active
         
         ">
       <a href="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/">
-          <b> 4.3. </b>Image Lifecycle Management
+          <b> 5.3. </b>ECR Image Lifecycle Management
           
             <i class="fas fa-check read-icon"></i>
           
@@ -671,7 +671,7 @@
             
           
           
-            <a href='/fcj-ecr-container-registry-workshop/'>Container Registry Management with ECR and Security Policies</a> > <a href='/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/'>ECR Security & Lifecycle</a> > Image Lifecycle Management
+            <a href='/fcj-ecr-container-registry-workshop/'>Container Registry Management with ECR and Security Policies</a> > <a href='/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/'>ECR Security & Lifecycle</a> > ECR Image Lifecycle Management
           
         
           
@@ -684,7 +684,17 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+        <li><a href="#overview-of-lifecycle-policies-in-ecr">Overview of Lifecycle Policies in ECR</a></li>
+        <li><a href="#configuring-lifecycle-policies-in-ecr">Configuring Lifecycle Policies in ECR</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -700,7 +710,7 @@
           
             <h1>
               
-              Image Lifecycle Management
+              ECR Image Lifecycle Management
             </h1>
           
 
@@ -708,7 +718,149 @@
 
 
 
-	
+	<p>Security and cost management are two critical factors when working with Docker images in Amazon ECR. By default, ECR retains all your image versions indefinitely, which can lead to an accumulation of unnecessary old images, increasing storage costs and making the repository cluttered.</p>
+<p>ECR Lifecycle Policies allow you to automatically manage these images. You can configure rules to delete images based on age, tag status (tagged/untagged), or image count. This helps you maintain clean ECR repositories, keeping only necessary images and optimizing costs.</p>
+<h4 id="objectives-of-this-section">Objectives of this section</h4>
+<ul>
+<li>Understand the importance of lifecycle management for Docker images.</li>
+<li>Create and configure ECR lifecycle policies to automatically clean up old images.</li>
+<li>Understand how lifecycle rules work and their impact on your images.</li>
+</ul>
+<h3 id="overview-of-lifecycle-policies-in-ecr">Overview of Lifecycle Policies in ECR</h3>
+<p>A lifecycle policy consists of one or more rules. Each rule defines an action (typically deletion) based on specific criteria. Common criteria include:</p>
+<ul>
+<li><strong>Age:</strong> Delete images older than a certain number of days.</li>
+<li><strong>Count:</strong> Retain the N most recent images and delete older ones.</li>
+<li><strong>Tag Status:</strong> Delete untagged images or images with specific tags.</li>
+</ul>
+<p>Rules are enforced according to the Rule Priority you define.</p>
+<h3 id="configuring-lifecycle-policies-in-ecr">Configuring Lifecycle Policies in ECR</h3>
+<p>Now we will create a lifecycle policy for our <code>fcj-workshop-app</code> repository.</p>
+<ol>
+<li>
+<p>Ensure you are in the ECR dashboard:</p>
+<ul>
+<li>In the AWS Console search bar, type &ldquo;ECR&rdquo; and select <strong>Elastic Container Registry</strong>.
+<figure><img src="/fcj-ecr-container-registry-workshop/images/5/5.3/001.png"
+        alt="Select fcj-workshop-app repository from the list">
+    </figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Select the <code>fcj-workshop-app</code> Repository:</p>
+<ul>
+<li>From the list of repositories, click on the name of your <code>fcj-workshop-app</code> repository.</li>
+</ul>
+</li>
+<li>
+<p>Navigate to the &ldquo;Lifecycle policy&rdquo; tab:</p>
+<ul>
+<li>On the <code>fcj-workshop-app</code> repository details page, click the <strong>Lifecycle policy</strong> tab.
+<figure><img src="/fcj-ecr-container-registry-workshop/images/5/5.3/002.png"
+        alt="Navigate to Lifecycle policy tab">
+    </figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Click the &ldquo;Create rule&rdquo; button:</p>
+<ul>
+<li>On the &ldquo;Lifecycle policy&rdquo; tab, you will see the <strong>Create rule</strong> button. Click it to start defining rules for the policy.
+<figure><img src="/fcj-ecr-container-registry-workshop/images/5/5.3/003.png"
+        alt="Click Create rule button">
+    </figure>
+</li>
+</ul>
+
+<div class="notices note" ><p>Before applying the policy, it is recommended to create and test the rule (test rule) to preview which images will be deleted. This helps you avoid unintended data loss.</p>
+</div>
+
+</li>
+<li>
+<p>Configure the first rule: Delete Untagged Images:</p>
+<ul>
+<li>Add a new rule with the following settings:
+<ul>
+<li><strong>Rule priority:</strong> <code>1</code> (Highest priority)</li>
+<li><strong>Rule description:</strong> <code>Delete untagged images</code></li>
+<li><strong>Image status:</strong> <code>Untagged</code></li>
+<li><strong>Action:</strong> <code>Expire images</code></li>
+<li><strong>Since image pushed</strong>: <code>1</code> (day)
+<figure><img src="/fcj-ecr-container-registry-workshop/images/5/5.3/003-a.png"
+        alt="Configure rule to delete untagged images">
+    </figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Configure Rule 2: Keep the 3 most recent tagged images and delete older ones:</p>
+<ul>
+<li>Click &ldquo;Create rule&rdquo; again and configure the second rule with the following settings:
+<ul>
+<li><strong>Rule priority:</strong> <code>2</code></li>
+<li><strong>Rule description:</strong> <code>Keep latest 3 tagged images, delete others</code></li>
+<li><strong>Image status:</strong> <code>Tagged</code></li>
+<li><strong>Specify tags for wildcard matching:</strong> <strong>Enter <code>*</code></strong> (This is a <strong>REQUIRED wildcard character</strong> for the rule to apply to ALL tagged images when using the &ldquo;Image count greater than&rdquo; criteria. ECR requires you to enter at least one tag pattern.)</li>
+<li><strong>Match criteria:</strong> <code>Image count greater than</code></li>
+<li><strong>Value:</strong> <code>3</code></li>
+<li><strong>Action:</strong> <code>Expire images</code>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/5/5.3/003-b.png"
+        alt="Configure rule to keep latest 3 tagged images">
+    </figure>
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="notices note" ><p>Once all rules for the policy have been defined, you should simulate the policy to preview its impact before officially creating it.</p>
+</div>
+
+</li>
+<li>
+<p>Push More Images to the Repository to Test the Policy:</p>
+<ul>
+<li>To have enough data for the lifecycle policy to operate and for you to see clear simulation results, repeat the steps for pushing images to the ECR repository (as done in Section 4.3. <a href="/fcj-ecr-container-registry-workshop/4-ci-cd-with-github-actions/4.3-run-pipeline/">Run and test Pipeline</a>).</li>
+<li>You should push approximately <strong>5 new images</strong> with different tags (e.g., <code>v0.0.2</code>, <code>v0.0.3</code>, <code>v0.0.4</code>, <code>v0.0.5</code>, <code>v0.0.6</code>). Ensure each push is a new version to create distinct images.</li>
+</ul>
+</li>
+<li>
+<p>Simulate policy to preview its impact:</p>
+<ul>
+<li>After <strong>defining all rules</strong> for the policy, you should run a simulation to see which images will be affected (deleted) before actual application. On the policy creation interface:</li>
+<li>The simulation results will show a list of images that would be deleted if this policy were executed. This helps you avoid accidentally deleting important images.</li>
+<li>Go back to your ECR repository and select Lifecycle Policy.</li>
+<li>Choose Actions.</li>
+<li>Select copy policy to test rules.
+<figure><img src="/fcj-ecr-container-registry-workshop/images/5/5.3/006.png"
+        alt="Simulate lifecycle policy to preview impact">
+    </figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Select the rule you want to test run:</p>
+<ul>
+<li>Choose run test.
+<figure><img src="/fcj-ecr-container-registry-workshop/images/5/5.3/007.png"
+        alt="Review and create lifecycle policy">
+    </figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Check the test run:</p>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/5/5.3/008.png"
+        alt="Lifecycle policy successfully created">
+    </figure>
+
+</li>
+</ol>
+<p>Implementing a lifecycle policy helps automate the cleanup process, ensuring that your ECR repository is always optimized and contains only the necessary images.</p>
+<hr>
+
 
 
 
@@ -1024,19 +1176,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752202651"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752202651"></script>
 
-    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752160031" rel="stylesheet" />
-    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752160031"></script>
+    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752202651" rel="stylesheet" />
+    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752202651"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -12,21 +12,21 @@
     <title>GitHub Actions Workflow :: Create a new AWS account.</title>
 
     
-    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752160031" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752202651" rel="stylesheet">
     
-    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752160031" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752202651" rel="stylesheet">
     
     
 
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752202651"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752160031"></script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752160031"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752202651"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752202651"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/fcj-ecr-container-registry-workshop\/";
     
 </script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752160031"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752202651"></script>
 
     
   </div>
@@ -409,13 +409,13 @@
  
   
     
-    <li data-nav-id="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/" title="Image Lifecycle Management" class="dd-item 
+    <li data-nav-id="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/" title="ECR Image Lifecycle Management" class="dd-item 
         
         
         
         ">
       <a href="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/">
-          <b> 4.3. </b>Image Lifecycle Management
+          <b> 5.3. </b>ECR Image Lifecycle Management
           
             <i class="fas fa-check read-icon"></i>
           
@@ -684,7 +684,17 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+        <li><a href="#the-main-workflow-file-mainyml">The Main Workflow File: main.yml</a></li>
+        <li><a href="#script-git_updatesh">Script: git_update.sh</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -708,7 +718,140 @@
 
 
 
-	
+	<p>In this section, we will <strong>examine and analyze the architecture of a GitHub Actions Workflow file</strong> used to automate the process of building Docker images and pushing them to Amazon ECR when changes are made to the <code>main</code> branch.</p>
+<h4 id="objectives-of-this-section">Objectives of this section</h4>
+<ul>
+<li>Understand the basic structure of a GitHub Actions Workflow.</li>
+<li>Grasp the steps for authenticating with AWS, logging into ECR, building, and pushing images.</li>
+<li>Learn how the workflow leverages configured GitHub Secrets for secure credential handling.</li>
+</ul>
+<h3 id="the-main-workflow-file-mainyml">The Main Workflow File: main.yml</h3>
+<p>The <strong>main.yml</strong> file is located in the <strong>.github/workflows/</strong> directory of the repository. This is where your entire CI/CD flow is defined.</p>
+<ol>
+<li>
+<p>Content of the <strong>.github/workflows/main.yml</strong> file:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">CI/CD Pipeline</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">push</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">branches</span>: [<span style="color:#e6db74">&#34;main&#34;</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">permissions</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">contents</span>: <span style="color:#ae81ff">write</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">build-and-push</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#ae81ff">build and push to ECR</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">checkout</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v4</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">with</span>:
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">fetch-depth</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">configure aws credentials</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">aws-actions/configure-aws-credentials@v1</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">with</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">aws-access-key-id</span>: <span style="color:#ae81ff">${{ secrets.AWS_ACCESS_KEY_ID }}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">aws-secret-access-key</span>: <span style="color:#ae81ff">${{ secrets.AWS_SECRET_ACCESS_KEY }}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">aws-region</span>: <span style="color:#ae81ff">${{ secrets.AWS_REGION }}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">login to amazon ECR</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">id</span>: <span style="color:#ae81ff">login-ecr</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">aws-actions/amazon-ecr-login@v1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Automatic Tagging of Releases</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">id</span>: <span style="color:#ae81ff">increment-git-tag</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        bash ./build/git_update.sh -v patch</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">build, tag, and push the image to ECR</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">id</span>: <span style="color:#ae81ff">build-image</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">ECR_REGISTRY</span>: <span style="color:#ae81ff">${{ steps.login-ecr.outputs.registry }}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">ECR_REPOSITORY</span>: <span style="color:#ae81ff">${{ secrets.ECR_REPOSITORY_URI }}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">IMAGE_TAG</span>: <span style="color:#ae81ff">${{ steps.increment-git-tag.outputs.git-tag }}</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">run</span>: |<span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG</span>
+</span></span></code></pre></div></li>
+</ol>
+<h4 id="workflow-explanation">Workflow Explanation</h4>
+<ul>
+<li><strong>on: push</strong>: The workflow will execute every time code is pushed to the <strong>main</strong> branch.</li>
+<li><strong>permissions: contents: write</strong>: This permission is required for the workflow to create and push tags to the repository.</li>
+<li><strong>configure aws credentials</strong>: Uses the <strong>aws-actions/configure-aws-credentials@v1</strong> action to configure AWS credentials from GitHub Secrets.</li>
+<li><strong>login to amazon ECR</strong>: Uses the <strong>aws-actions/amazon-ecr-login@v1</strong> action to log Docker into ECR.</li>
+<li><strong>Automatic Tagging of Releases</strong>: Runs the <strong>git_update.sh</strong> script to automatically increment the patch version and create a new Git tag.</li>
+<li><strong>build, tag, and push the image to ECR</strong>: Builds the Docker image, tags it with the new version, and pushes the image to ECR.</li>
+</ul>
+<h3 id="script-git_updatesh">Script: git_update.sh</h3>
+<p>The workflow file above calls a shell script named <code>git_update.sh</code> located in the <code>build/</code> directory of the repository. This script is responsible for automatically versioning the application by creating new Git tags (e.g., v1.0.0, v1.0.1, v1.0.2).</p>
+<pre><code>VERSION=&quot;&quot;
+
+while getopts v: flag
+do
+    case &quot;${flag}&quot; in
+        v) VERSION=${OPTARG};;
+    esac
+done
+
+git fetch --tags --prune --unshallow 2&gt;/dev/null
+CURRENT_VERSION=$(git describe --abbrev=0 --tags 2&gt;/dev/null)
+
+if [[ &quot;$CURRENT_VERSION&quot; == &quot;&quot; ]]; then
+    CURRENT_VERSION=&quot;v0.0.0&quot;
+fi
+
+echo &quot;Current Version: $CURRENT_VERSION&quot;
+
+NUM_PART=${CURRENT_VERSION#v}
+CURRENT_VERSION_PARTS=(${NUM_PART//./ })
+
+VNUM1=${CURRENT_VERSION_PARTS[0]}
+VNUM2=${CURRENT_VERSION_PARTS[1]}
+VNUM3=${CURRENT_VERSION_PARTS[2]}
+
+if [[ $VERSION == 'major' ]]; then
+    VNUM1=$((VNUM1+1))
+    VNUM2=0
+    VNUM3=0
+elif [[ $VERSION == 'minor' ]]; then
+    VNUM2=$((VNUM2+1))
+    VNUM3=0
+elif [[ $VERSION == 'patch' ]]; then
+    VNUM3=$((VNUM3+1))
+else
+    echo &quot;Invalid version type. Use: -v [major|minor|patch]&quot;
+    exit 1
+fi
+
+NEW_TAG=&quot;v$VNUM1.$VNUM2.$VNUM3&quot;
+echo &quot;($VERSION) updating $CURRENT_VERSION to $NEW_TAG&quot;
+
+GIT_COMMIT=$(git rev-parse HEAD)
+NEEDS_TAG=$(git describe --contains $GIT_COMMIT 2&gt;/dev/null)
+
+if [ -z &quot;$NEEDS_TAG&quot; ]; then
+    echo &quot;Tagged with $NEW_TAG&quot;
+    git tag $NEW_TAG
+    git push origin $NEW_TAG
+else
+    echo &quot;Already a tag on this commit&quot;
+fi
+
+echo &quot;git-tag=$NEW_TAG&quot; &gt;&gt; $GITHUB_OUTPUT
+exit 0
+</code></pre>
+<h4 id="script-explanation">Script Explanation</h4>
+<ul>
+<li><strong>Fetch current Git tag version</strong>: Uses the <code>git describe</code> command to check the most recent tag in the repository.</li>
+<li><strong>Increment major, minor, or patch version</strong>: Based on the parameter passed from the workflow (e.g., <code>-v patch</code>, <code>-v minor</code>, or <code>-v major</code>).</li>
+<li><strong>Create new Git tag</strong>: Attaches the new tag (e.g., <code>v1.2.3</code>) and pushes it to GitHub using the <code>git push origin</code> command.</li>
+<li><strong>Export tag value to output</strong>: Allows subsequent steps in GitHub Actions to utilize this tag (e.g., for the <code>IMAGE_TAG</code> when building the Docker image).</li>
+</ul>
+<hr>
+
 
 
 
@@ -1024,19 +1167,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752202651"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752202651"></script>
 
-    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752160031" rel="stylesheet" />
-    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752160031"></script>
+    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752202651" rel="stylesheet" />
+    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752202651"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

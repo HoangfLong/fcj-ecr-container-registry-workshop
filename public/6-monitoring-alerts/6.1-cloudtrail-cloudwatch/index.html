@@ -12,21 +12,21 @@
     <title>CloudTrail and CloudWatch :: Create a new AWS account.</title>
 
     
-    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752160031" rel="stylesheet">
-    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752160031" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/nucleus.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/fontawesome-all.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hybrid.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/featherlight.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/perfect-scrollbar.min.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/auto-complete.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/atom-one-dark-reasonable.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme.css?1752202651" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/hugo-theme.css?1752202651" rel="stylesheet">
     
-    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752160031" rel="stylesheet">
+    <link href="/fcj-ecr-container-registry-workshop/css/theme-workshop.css?1752202651" rel="stylesheet">
     
     
 
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery-3.3.1.min.js?1752202651"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752160031"></script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752160031"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/lunr.min.js?1752202651"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/auto-complete.js?1752202651"></script>
 <script type="text/javascript">
     
         var baseurl = "http:\/\/localhost:1313\/fcj-ecr-container-registry-workshop\/";
     
 </script>
-<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752160031"></script>
+<script type="text/javascript" src="/fcj-ecr-container-registry-workshop/js/search.js?1752202651"></script>
 
     
   </div>
@@ -409,13 +409,13 @@
  
   
     
-    <li data-nav-id="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/" title="Image Lifecycle Management" class="dd-item 
+    <li data-nav-id="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/" title="ECR Image Lifecycle Management" class="dd-item 
         
         
         
         ">
       <a href="/fcj-ecr-container-registry-workshop/5-ecr-security-lifecycle/5.3-lifecycle-policy/">
-          <b> 4.3. </b>Image Lifecycle Management
+          <b> 5.3. </b>ECR Image Lifecycle Management
           
             <i class="fas fa-check read-icon"></i>
           
@@ -684,7 +684,17 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#setting-up-cloudtrail-to-monitor-ecr">Setting up CloudTrail to monitor ECR</a></li>
+        <li><a href="#viewing-and-analyzing-ecr-logs">Viewing and analyzing ECR logs</a></li>
+        <li><a href="#monitoring-metrics-and-creating-dashboards">Monitoring metrics and creating Dashboards</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -708,7 +718,205 @@
 
 
 
-	
+	<p>For a comprehensive overview of activities within Amazon ECR and to ensure adherence to security policies, leveraging <strong>AWS CloudTrail</strong> and <strong>Amazon CloudWatch</strong> is essential. These two services work together to provide robust monitoring capabilities, helping you track who did what, when, and where within your registry environment.</p>
+<p>In this section, you&rsquo;ll learn how to:</p>
+<ul>
+<li>Ensure CloudTrail records ECR activity and sends logs to CloudWatch Logs.</li>
+<li>Monitor ECR-related API calls.</li>
+<li>Analyze logs and monitor ECR performance metrics.</li>
+</ul>
+<hr>
+<h3 id="setting-up-cloudtrail-to-monitor-ecr">Setting up CloudTrail to monitor ECR</h3>
+<ol>
+<li>
+<p>Log in and access CloudTrail:</p>
+<ul>
+<li>Log in to the <a href="https://aws.amazon.com/console/">AWS Management Console</a>.</li>
+<li>In the search bar, type <code>CloudTrail</code> and select the <strong>CloudTrail</strong> service from the results.</li>
+</ul>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/001.png"
+        alt="Search for and select the CloudTrail service">
+    </figure>
+
+</li>
+<li>
+<p>Check Trail status and decide action:</p>
+<ul>
+<li>In the CloudTrail dashboard, select <strong>&ldquo;Trails&rdquo;</strong> from the left menu.</li>
+<li>Check if you already have an active Trail that is sending logs to CloudWatch Logs.
+<ul>
+<li><strong>If you need to create a new Trail or configure an existing one:</strong> Proceed to <strong>Step 3</strong>.</li>
+<li><strong>If the Trail is already correctly configured:</strong> You can skip the Trail configuration steps and go directly to <strong>Step 9</strong>.</li>
+</ul>
+</li>
+</ul>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/002.png"
+        alt="Check the list of Trails in CloudTrail">
+    </figure>
+
+</li>
+<li>
+<p>Create or edit a Trail to send logs to CloudWatch Logs:</p>
+<ul>
+<li><strong>If creating a new Trail:</strong> Click on <strong>&ldquo;Create trail&rdquo;</strong>.</li>
+<li><strong>If editing an existing Trail:</strong> Click on the Trail&rsquo;s name, then find the <strong>&ldquo;CloudWatch Logs&rdquo;</strong> section and click <strong>&ldquo;Edit&rdquo;</strong>.</li>
+</ul>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/003.png"
+        alt="Start creating or editing a Trail">
+    </figure>
+
+</li>
+<li>
+<p>Configure Trail details (if creating new):</p>
+<ul>
+<li><strong>Trail name:</strong> Give your Trail a name (e.g., <code>ecr-monitor-trail</code>).</li>
+<li><strong>Storage location:</strong> Choose <strong>&ldquo;Create new S3 bucket&rdquo;</strong> and give it a name (or use an existing bucket).</li>
+<li><strong>CloudWatch Logs:</strong> <strong>Select &ldquo;Enabled&rdquo;</strong>. Choose <strong>&ldquo;New&rdquo;</strong> to create a new Log group (e.g., <code>/aws/cloudtrail/ecr-logs</code>) or select an existing Log group.</li>
+<li>(Keep other options as default or skip them).</li>
+</ul>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/004.png"
+        alt="Configure Trail name, S3 bucket, and CloudWatch Logs">
+    </figure>
+
+</li>
+<li>
+<p>Configure Trail details (continued):</p>
+<ul>
+<li>Click <strong>&ldquo;Next&rdquo;</strong>.</li>
+<li>In the <strong>&ldquo;Choose log events&rdquo;</strong> section, ensure <strong>&ldquo;Management events&rdquo;</strong> is selected.</li>
+</ul>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/005.png"
+        alt="Select &#39;Management events&#39; for the Trail">
+    </figure>
+
+</li>
+<li>
+<p>Complete Trail creation:</p>
+<ul>
+<li>Click <strong>&ldquo;Next&rdquo;</strong>.</li>
+<li>Click <strong>&ldquo;Create trail&rdquo;</strong> (if creating new) or <strong>&ldquo;Save changes&rdquo;</strong> (if editing).</li>
+</ul>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/006.png"
+        alt="Complete creating or saving Trail configuration">
+    </figure>
+
+</li>
+</ol>
+<hr>
+<h3 id="viewing-and-analyzing-ecr-logs">Viewing and analyzing ECR logs</h3>
+<ol start="7">
+<li>
+<p>Access CloudTrail Event History:</p>
+<ul>
+<li>In the CloudTrail dashboard, select <strong>&ldquo;Event history&rdquo;</strong> from the left menu.</li>
+</ul>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/007.png"
+        alt="Select &#39;Event history&#39; in CloudTrail">
+    </figure>
+
+</li>
+<li>
+<p>Filter events by ECR:</p>
+<ul>
+<li>Click on the filter <strong>&ldquo;Attribute&rdquo;</strong>, select <strong>&ldquo;Event source&rdquo;</strong>.</li>
+<li>In the field next to it, type <code>ecr.amazonaws.com</code> and press <code>Enter</code>.</li>
+</ul>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/008.png"
+        alt="Filter CloudTrail event history by ECR">
+    </figure>
+
+</li>
+<li>
+<p>Access Log groups in CloudWatch:</p>
+<ul>
+<li>In the AWS Console search bar, type <code>CloudWatch</code> and select the <strong>CloudWatch</strong> service.</li>
+<li>In the CloudWatch dashboard, select <strong>&ldquo;Log groups&rdquo;</strong> under <strong>&ldquo;Logs&rdquo;</strong>.</li>
+</ul>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/009.png"
+        alt="Access Log groups in CloudWatch">
+    </figure>
+
+</li>
+<li>
+<p>Find the CloudTrail Log group:</p>
+<ul>
+<li>In the Log group list, find the Log group that CloudTrail is sending logs to (configured in Step 4).</li>
+<li>Click on the name of that Log group to view the log streams.</li>
+</ul>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/010.png"
+        alt="Select the CloudTrail Log group in CloudWatch Logs">
+    </figure>
+
+</li>
+</ol>
+<h3 id="monitoring-metrics-and-creating-dashboards">Monitoring metrics and creating Dashboards</h3>
+<ol start="11">
+<li>
+<p>Monitor ECR metrics in CloudWatch Metrics:</p>
+<ul>
+<li>In the CloudWatch dashboard, select <strong>&ldquo;Metrics&rdquo;</strong> from the left menu.</li>
+<li>In the &ldquo;All metrics&rdquo; section, select the namespace <strong>&ldquo;ECR&rdquo;</strong> or <strong>&ldquo;AWS/ECR&rdquo;</strong>.</li>
+<li>Choose the ECR metrics you want to view (e.g., <code>RepositorySize</code>, <code>ImageCount</code>).</li>
+</ul>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/012.png"
+        alt="View ECR metrics in CloudWatch Metrics">
+    </figure>
+
+</li>
+<li>
+<p>Create a custom Dashboard for ECR (Optional):</p>
+<ul>
+<li>In the CloudWatch dashboard, select <strong>&ldquo;Dashboards&rdquo;</strong>.</li>
+<li>Click <strong>&ldquo;Create dashboard&rdquo;</strong>, name it (ex: <code>ECR-Operations-Dashboard</code>), and click <strong>&ldquo;Create dashboard&rdquo;</strong>.
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/014.png"
+        alt="Create custom Dashboard for ECR">
+    </figure>
+</li>
+</ul>
+</li>
+<li>
+<p>Add widgets.</p>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/015.png"
+        alt="Add widgets to Dashboard">
+    </figure>
+
+</li>
+<li>
+<p>Select the metric to add.</p>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/015.png"
+        alt="Select metric for Dashboard">
+    </figure>
+
+</li>
+<li>
+<p>Select ECR.</p>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/016-a.png"
+        alt="Select ECR namespace for Dashboard">
+    </figure>
+
+</li>
+<li>
+<p>Choose your ECR repository.</p>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/016.png"
+        alt="Select ECR repository for Dashboard">
+    </figure>
+
+</li>
+<li>
+<p>Select create widget.</p>
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/017.png"
+        alt="Create widget for Dashboard">
+    </figure>
+
+<figure><img src="/fcj-ecr-container-registry-workshop/images/6/6.1/018.png"
+        alt="Final ECR Dashboard view">
+    </figure>
+
+</li>
+</ol>
+<hr>
+<p>By setting up AWS CloudTrail to record ECR events and send them to Amazon CloudWatch Logs, you&rsquo;ve created a robust monitoring system. Now, you can easily track API activities in ECR, analyze detailed logs using CloudWatch Logs Insights, and visualize key ECR performance metrics through custom CloudWatch Dashboards. This allows you to not only understand who did what and when in your image repositories, but also proactively monitor ECR&rsquo;s status and performance, thereby enhancing both security and operational efficiency.</p>
+
 
 
 
@@ -1021,19 +1229,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/clipboard.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/perfect-scrollbar.jquery.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/jquery.sticky.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/featherlight.min.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/highlight.pack.js?1752202651"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752160031"></script>
-    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752160031"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/modernizr.custom-3.6.0.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/learn.js?1752202651"></script>
+    <script src="/fcj-ecr-container-registry-workshop/js/hugo-learn.js?1752202651"></script>
 
-    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752160031" rel="stylesheet" />
-    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752160031"></script>
+    <link href="/fcj-ecr-container-registry-workshop/mermaid/mermaid.css?1752202651" rel="stylesheet" />
+    <script src="/fcj-ecr-container-registry-workshop/mermaid/mermaid.js?1752202651"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
